@@ -1,0 +1,5 @@
+{
+    "appid": "",
+    "key": "",
+    "text_file_dirs.json": "在上方填写百度翻译API的appid和key,注意你需要申请好翻译权限，否则翻译会不成功~"
+}

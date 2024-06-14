@@ -1,0 +1,79 @@
+textarea.fk-textarea-edit {
+    background-image: url('fyhbg.png');
+    background-size: 220px;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+textarea.fk-textarea-shuru {
+    background-image: url('fybg.png');
+    background-size: 220px;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 1 !important;
+    transition: all 0.1s ease;
+}
+
+.fk-mishishuru {
+    width: 490px;
+    position: fixed;
+    z-index: 999;
+    background: #fff;
+    left: 50%;
+    margin-left: -300px;
+    padding: 20px;
+    top: 25%;
+    border: 1px solid #eee;
+    border-radius: 20px;
+    color: #333;
+}
+
+.fk-mishishuru .ht {
+    font-size: 18px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 11px;
+    font-weight: bold;
+}
+
+.fk-mishishuru .sqrk {
+    font-size: 16px;
+    padding: 5px 0;
+    background: #ededed;
+    border-radius: 20px;
+    text-align: center;
+    margin: 10px 2px;
+}
+
+.fk-mishishuru .fk-mishishuru-input {
+    display: inline-block;
+    width: 49%;
+}
+
+.fk-mishishuru .fk-mishishuru-input input {
+    width: 93%;
+    padding: 10px;
+    margin-top: 6px;
+    border-radius: 13px;
+    border: 1px solid #333;
+}
+.fk-mishishuru .fk-mishishuru-input span{
+    font-size: 16px;
+}
+.fk-mishishuru .fk-mishishuru-btn {
+    text-align: center;
+    padding-top: 20px;
+}
+
+.fk-mishishuru .fk-mishishuru-btn a {
+    font-size: 17px;
+    background: #666;
+    display: inline-block;
+    margin: 0 8px;
+    padding: 4px 19px;
+    color: #fff;
+    border-radius: 13px;
+    cursor: pointer;
+}
+.fk-mishishuru .fk-mishishuru-btn a.oks{
+    background: #2a2a2b;
+}
