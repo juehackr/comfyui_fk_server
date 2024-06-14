@@ -13,7 +13,7 @@ tips：输入中文后，鼠标移开或点击任意区域即可自动翻译
 
 ## 演示视频(双击输入框进入自动翻译模式)
 
-https://github.com/juehackr/comfyui_fk_server/assets/85547436/0f8601ca-fa9a-48b1-9600-1d84610c914e
+https://github.com/juehackr/comfyui_fk_server/assets/85547436/666a1f7f-ca75-4a38-88c9-81bbb616b92f
 
 ## 插件安装方法
 
