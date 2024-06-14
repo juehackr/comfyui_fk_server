@@ -56,9 +56,11 @@ textarea.fk-textarea-shuru {
     border-radius: 13px;
     border: 1px solid #333;
 }
-.fk-mishishuru .fk-mishishuru-input span{
+
+.fk-mishishuru .fk-mishishuru-input span {
     font-size: 16px;
 }
+
 .fk-mishishuru .fk-mishishuru-btn {
     text-align: center;
     padding-top: 20px;
@@ -74,6 +76,59 @@ textarea.fk-textarea-shuru {
     border-radius: 13px;
     cursor: pointer;
 }
-.fk-mishishuru .fk-mishishuru-btn a.oks{
+
+.fk-mishishuru .fk-mishishuru-btn a.oks {
     background: #2a2a2b;
+}
+
+.translate-popup {
+    position: absolute;
+    display: none;
+    color: #fff;
+    background-color: #333;
+    border-radius: 8px;
+    padding: 4px 8px;
+    cursor: pointer;
+    z-index: 1000;
+    font-size: 14px;
+    opacity: 0.7;
+    border: 1px solid #646464;
+}
+
+.translate-popup .iconfont {
+    margin-right: 3px;
+    font-size: 14px;
+}
+
+.translate-popup:hover {
+    opacity: 1;
+}
+
+.fkfyjg {
+    background: rgb(0 0 0 / 38%);
+    padding: 0 12px;
+    border-radius: 8px;
+    margin-bottom: 6px;
+}
+
+.fkfyjg .fkfyjg-title {
+    font-size: 18px;
+    border-bottom: 1px solid rgb(238 238 238 / 10%);
+    padding-bottom: 8px;
+    color: #b1b1b1;
+}
+
+.fkfyjg .fkfyjg-title span {
+    background: #000;
+    padding: 1px 5px;
+    font-size: 13px;
+    line-height: 13px;
+    color: #333;
+    border-radius: 6px;
+    height: 16px;
+    float: right;
+}
+
+.fkfyjg .fkfyjg-content {
+  
 }
