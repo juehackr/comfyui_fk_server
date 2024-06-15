@@ -12,6 +12,7 @@ textarea.fk-textarea-shuru {
     background-repeat: no-repeat;
     z-index: 1 !important;
     transition: all 0.1s ease;
+    background-color: #222;
 }
 
 .fk-mishishuru {
