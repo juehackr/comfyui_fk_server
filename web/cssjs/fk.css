@@ -1,6 +1,7 @@
 textarea.fk-textarea-edit {
     background-image: url('fyhbg.png');
     background-size: 220px;
+    z-index: 1 !important;
     background-position: center;
     background-repeat: no-repeat;
 }
@@ -10,10 +11,10 @@ textarea.fk-textarea-shuru {
     background-size: 220px;
     background-position: center;
     background-repeat: no-repeat;
-    z-index: 1 !important;
-    transition: all 0.1s ease;
+    z-index: 2 !important;
     background-color: #222;
 }
+
 
 .fk-mishishuru {
     width: 490px;
@@ -130,6 +131,4 @@ textarea.fk-textarea-shuru {
     float: right;
 }
 
-.fkfyjg .fkfyjg-content {
-  
-}
+.fkfyjg .fkfyjg-content {}
