@@ -6,6 +6,6 @@ NODE_CLASS_MAPPINGS = {}
 WEB_DIRECTORY = "web"
 __all__ = ["NODE_CLASS_MAPPINGS"]
 
-VERSION = "1.0"
+VERSION = "1.1"
 
 print("》===>====>========>FkServer:OK!<========<====<===《")
