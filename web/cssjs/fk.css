@@ -141,12 +141,12 @@ textarea.fk-textarea-shuru {
 }
 
 #comfy-fkmxcx span {
-    font-size: 10px;
+    font-size: 9px;
     color: #ffffff;
     background: #006edf;
-    padding: 1px 5px;
+    padding: 0px 5px;
     border-radius: 6px;
     position: relative;
-    top: -2px;
+    top: -1px;
     margin-right: 3px;
 }
