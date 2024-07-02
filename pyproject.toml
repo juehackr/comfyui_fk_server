@@ -1,0 +1,14 @@
+[project]
+name = "comfyui_fk_server"
+description = "🤗🤗🤗Comfyui Universal Translation Plugin (no longer requires adding various nodes, directly add translation function on the existing nodes), allowing Comfyui to support Chinese input and automatic translation for any long text input box, while adding error translation function (calling Baidu Translate), achieving translation freedom!"
+version = "1.2.0"
+license = "LICENSE"
+
+[project.urls]
+Repository = "https://github.com/juehackr/comfyui_fk_server"
+#  Used by Comfy Registry https://comfyregistry.org
+
+[tool.comfy]
+PublisherId = "juehackr"
+DisplayName = "comfyui_fk_server"
+Icon = ""
