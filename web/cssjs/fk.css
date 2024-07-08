@@ -73,7 +73,7 @@ textarea.fk-textarea-shuru {
 }
 
 .fk-mishishuru .sqrk {
-    font-size: 16px;
+    font-size: 15px;
     padding: 5px 0;
     background: #ededed;
     border-radius: 20px;
@@ -176,12 +176,9 @@ textarea.fk-textarea-shuru {
 }
 
 #comfy-fkmxcx span {
-    font-size: 10px;
-    color: #ffffff;
-    background: #006edf;
-    padding: 1px 5px;
-    border-radius: 6px;
-    position: relative;
-    top: -2px;
-    margin-right: 3px;
+    background-image: url('icon.png');
+    width: 19px;
+    height: 11px;
+    display: inline-block;
+    background-size: cover;
 }

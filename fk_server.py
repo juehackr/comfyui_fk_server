@@ -42,12 +42,16 @@ async def fkpostapi(request):
     post = await request.post()
     bdappid = post.get("bdappid")
     bdappkey = post.get("appbdkey") 
+    zhitsc = post.get("zhitsc")
+    zhipukey = post.get("zhipukey") 
     if bdappid and bdappkey:
         config_path = os.path.join(os.path.dirname(__file__), "ini.json")
         config_data = string_to_json(read_file_content(config_path))
+        print(f"Comfyui_fk_server：密钥设置成功")
         config_data["appid"] = bdappid
         config_data["key"] = bdappkey
-        config_data["help"] = "在上方填写百度翻译API的appid和key,注意你需要申请好翻译权限，否则翻译会不成功哦~"
+        config_data["zhitsc"] = zhitsc
+        config_data["zhipukey"] = zhipukey
         with open(config_path, 'w', encoding='utf-8') as file:
              json.dump(config_data, file, ensure_ascii=False, indent=4)
-    return web.json_response({}) 
+    return web.json_response({})
