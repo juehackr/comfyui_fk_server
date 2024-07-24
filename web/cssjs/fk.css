@@ -126,7 +126,7 @@ textarea.fk-textarea-shuru {
     border-radius: 8px;
     padding: 4px 8px;
     cursor: pointer;
-    z-index: 1000;
+    z-index:999999;
     font-size: 14px;
     opacity: 0.7;
     border: 1px solid #646464;
