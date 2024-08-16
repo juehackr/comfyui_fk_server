@@ -1,4 +1,4 @@
-import os
+import os,uuid
 from server import PromptServer
 from aiohttp import web
 import json
@@ -55,3 +55,14 @@ async def fkpostapi(request):
         with open(config_path, 'w', encoding='utf-8') as file:
              json.dump(config_data, file, ensure_ascii=False, indent=4)
     return web.json_response({})
+
+
+def get_uuid():
+     fkapiid = uuid.uuid4()
+     return fkapiid
+
+print(f"\33[93m》===>====>========>Fk_Server:OK!<========<====<===《\33[0m")
+print(f"\33[36m APIID: "  + str(get_uuid()) + "\033[0m")
+
+with open(os.path.join(os.path.dirname(__file__), "web/apiid.txt"), 'w') as file:  
+    file.write(str(get_uuid()))

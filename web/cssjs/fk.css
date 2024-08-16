@@ -54,7 +54,7 @@ textarea.fk-textarea-shuru {
 .fk-mishishuru {
     width: 490px;
     position: fixed;
-    z-index: 999;
+    z-index: 99999999;
     background: #fff;
     left: 50%;
     margin-left: -300px;
@@ -175,10 +175,10 @@ textarea.fk-textarea-shuru {
     width: 100%;
 }
 
-#comfy-fkmxcx span {
+#comfy-fkmxcx span ,#comfy-fkmxcx2 span{
     background-image: url('icon.png');
     width: 19px;
     height: 11px;
-    display: inline-block;
+    display: inline-block !important;
     background-size: cover;
 }
