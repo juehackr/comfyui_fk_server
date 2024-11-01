@@ -52,7 +52,20 @@ def is_node_installed():
         return False
  
 if (is_node_installed()):
-    node_script_path = os.path.join(os.path.dirname(__file__), 'server/suanli.js')
-    run_node_program(node_script_path)
+    serpath = os.path.join(os.path.dirname(__file__), 'server/')
+    if (os.path.exists(serpath+'node_modules')==True):
+        node_script_path = os.path.join(serpath, 'suanli.js')
+        run_node_program(node_script_path)
+    else:
+        print('正在安装算力环境...')      
+        os.chdir(serpath)
+        result = subprocess.run('npm install --registry=https://registry.npmmirror.com', shell=True, capture_output=True, text=True)
+
+        if result.returncode == 0:
+            node_script_path = os.path.join(serpath, 'suanli.js')
+            run_node_program(node_script_path)
+        else:
+            print('算力环境自动安装失败：请在server目录下执行 npm install 命令安装算力环境')
+
 else:
-    print("系统未安装Node.js，无法运行FKServer云服务")
+    print("系统未安装Node.js，无法运行FKServer云算力环境")
