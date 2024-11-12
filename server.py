@@ -1,17 +1,47 @@
 import subprocess
 import os
 import threading
+import platform
 
 class Cancelled(Exception):
     pass
 
-def run_node_program(node_script_path):
+def get_nodejs_path():
+    system = platform.system()    
+    if system == "Windows":
+        # 尝试使用 'where' 命令查找 Node.js 路径
+        try:
+            node_path = subprocess.check_output(["where", "node"]).decode().strip()
+            if node_path:
+                return node_path.split("\n")[0]  # 返回第一个匹配的路径
+        except subprocess.CalledProcessError:
+            return None
+    elif system == "Linux":
+        # 尝试使用 'which' 命令查找 Node.js 路径
+        try:
+            node_path = subprocess.check_output(["which", "node"]).decode().strip()
+            if node_path:
+                return node_path
+        except subprocess.CalledProcessError:
+            return None
+    else:
+        return None
+
+    return None
+def read_file(file_path):
+    try:
+        with open(file_path, 'r', encoding='utf-8') as file:
+            content = file.read()
+        return content
+    except FileNotFoundError:
+        return ""
+def run_node_program(nodepdth,node_script_path):
     def shuchu(a): 
         if(str(a).find("fkhides")==-1):
             print(a)            
     def _run_node_program():
         try:
-            command = ['node', node_script_path]        
+            command = [nodepdth, node_script_path]        
             process = subprocess.Popen(
                 command,
                 stdout=subprocess.PIPE,
@@ -43,29 +73,34 @@ def run_node_program(node_script_path):
     thread.start()
 
 
-def is_node_installed():
-    try:
-        result = subprocess.run(['node', '--version'], check=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-        if result.returncode == 0:        
-            return True
-    except (subprocess.CalledProcessError, FileNotFoundError):
-        return False
- 
-if (is_node_installed()):
+node_lujin = get_nodejs_path()
+
+
+if(not node_lujin):
+    ndpath = os.path.join(os.path.dirname(__file__), 'server/node.txt')
+    node_lujin = read_file(ndpath)
+
+if (node_lujin):
+    node_lujin = node_lujin.strip()
+else:   
+    ndpath = os.path.join(os.path.dirname(__file__), 'server/node.txt')
+    print(f'未检测到NodeJs，你可以在 {ndpath} 文件中写入node程序路径，手动配置NodeJs路径')
+
+if (node_lujin):
     serpath = os.path.join(os.path.dirname(__file__), 'server/')
     if (os.path.exists(serpath+'node_modules')==True):
         node_script_path = os.path.join(serpath, 'suanli.js')
-        run_node_program(node_script_path)
+        run_node_program(node_lujin,node_script_path)
     else:
-        print('正在安装算力环境...')      
+        print(f'正在安装算力环境...')      
         os.chdir(serpath)
         result = subprocess.run('npm install --registry=https://registry.npmmirror.com', shell=True, capture_output=True, text=True)
 
         if result.returncode == 0:
             node_script_path = os.path.join(serpath, 'suanli.js')
-            run_node_program(node_script_path)
+            run_node_program(node_lujin,node_script_path)
         else:
-            print('算力环境自动安装失败：请在server目录下执行 npm install 命令安装算力环境')
+            print(f'算力环境自动安装失败：请在server目录下执行 npm install 命令安装算力环境')
 
 else:
-    print("系统未安装Node.js，无法运行FKServer云算力环境")
+    print(f"系统未安装NodeJs，无法运行FKServer云算力环境")
