@@ -6,4 +6,4 @@ from .server import  Cancelled
 NODE_CLASS_MAPPINGS = {}
 WEB_DIRECTORY = "web"
 __all__ = ["NODE_CLASS_MAPPINGS"]
-VERSION = "1.2.7"
+VERSION = "1.2.8"

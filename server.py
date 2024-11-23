@@ -9,7 +9,6 @@ class Cancelled(Exception):
 def get_nodejs_path():
     system = platform.system()    
     if system == "Windows":
-        # 尝试使用 'where' 命令查找 Node.js 路径
         try:
             node_path = subprocess.check_output(["where", "node"]).decode().strip()
             if node_path:
@@ -17,7 +16,6 @@ def get_nodejs_path():
         except subprocess.CalledProcessError:
             return None
     elif system == "Linux":
-        # 尝试使用 'which' 命令查找 Node.js 路径
         try:
             node_path = subprocess.check_output(["which", "node"]).decode().strip()
             if node_path:
@@ -103,4 +101,6 @@ if (node_lujin):
             print(f'算力环境自动安装失败：请在server目录下执行 npm install 命令安装算力环境')
 
 else:
+    config_path = os.path.join(os.path.dirname(__file__), "server/data.json")
+    os.remove(config_path)
     print(f"系统未安装NodeJs，无法运行FKServer云算力环境")

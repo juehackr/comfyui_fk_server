@@ -13,7 +13,6 @@ textarea.fk-textarea-shuru {
     background-repeat: no-repeat;
     z-index: 2 !important;
     background-color: var(--comfy-input-bg) !important;
-    color: var(--input-text);
     width: 100%;
     height: 100%;
 }
@@ -31,7 +30,7 @@ textarea.fk-textarea-shuru {
     height: 20px;
     background-size: cover;
     cursor: pointer;
-    opacity: 0.6;
+    opacity: 0.8;
 }
 
 .fkwai:hover {
@@ -53,7 +52,7 @@ textarea.fk-textarea-shuru {
 }
 
 .fk-mishishuru {
-    width: 490px;
+    width: 600px;
     position: fixed;
     z-index: 99999999;
     background: #fff;
@@ -64,13 +63,15 @@ textarea.fk-textarea-shuru {
     border: 1px solid #eee;
     border-radius: 20px;
     color: #333;
+    text-align: center;
 }
 
 .fk-mishishuru .ht {
-    font-size: 18px;
+    font-size: 22px;
     border-bottom: 1px solid #eee;
-    padding-bottom: 11px;
+    padding-bottom: 18px;
     font-weight: bold;
+    text-align: left;
 }
 
 .fk-mishishuru .sqrk {
@@ -79,7 +80,7 @@ textarea.fk-textarea-shuru {
     background: #ededed;
     border-radius: 20px;
     text-align: center;
-    margin: 10px 2px;
+    margin:20px 2px;
 }
 
 .fk-mishishuru .fk-mishishuru-input {
@@ -139,7 +140,31 @@ textarea.fk-textarea-shuru {
 }
 
 .translate-popup:hover {
-    opacity: 1;
+    opacity: 1 !important;
+}
+
+.fk-textarea-fu {
+    opacity: 0.85 !important;
+}
+
+.fkhdcd {
+    text-align: left;
+    padding-bottom: 20px;
+    padding-top: 20px;
+}
+
+.fkhdcd span {
+    background: var(--bg-color) !important;
+    color: var(--fg-color) !important;
+    border: 2px solid var(--fg-color) !important;
+    padding: 12px 31px;
+    cursor: pointer;
+}
+
+.fkhdcd span.ck {
+    background: var(--fg-color) !important;
+    color: var(--bg-color) !important;
+    border: 2px solid var(--bg-color) !important;
 }
 
 .fkfyjg {
@@ -151,17 +176,13 @@ textarea.fk-textarea-shuru {
 
 .fkfyjg .fkfyjg-title {
     font-size: 18px;
-    border-bottom: 1px solid rgb(238 238 238 / 10%);
     padding-bottom: 8px;
-    color: #b1b1b1;
 }
 
 .fkfyjg .fkfyjg-title span {
-    background: #000;
     padding: 1px 5px;
     font-size: 13px;
     line-height: 13px;
-    color: #333;
     border-radius: 6px;
     height: 16px;
     float: right;
@@ -170,13 +191,13 @@ textarea.fk-textarea-shuru {
 .fkfyjg .fkfyjg-content {}
 
 
-#comfy-fkmxcx {
+.comfy-menu-btns #comfy-fkmxcx {
     font-size: 12px;
     display: block;
     width: 100%;
 }
 
-.fkxiumx span {
+#comfy-fkmxcx span {
     background-image: url('icon.png');
     width: 19px;
     height: 11px;

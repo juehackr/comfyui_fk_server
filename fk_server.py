@@ -10,25 +10,34 @@ def read_file_content(file_path):
         with open(file_path, 'r', encoding='utf-8') as file:
             return file.read()
     except FileNotFoundError:
-        return '{"appid": "","key": "","help": "在上方填写百度翻译API的appid和key,注意你需要申请好翻译权限，否则翻译会不成功~"}'
+        return '{}'
     except Exception as e:
-         return '{"appid": "","key": "","help": "在上方填写百度翻译API的appid和key,注意你需要申请好翻译权限，否则翻译会不成功~"}'
+         return '{}'
     return None
 def string_to_json(json_string):
     try:
         json_object = json.loads(json_string)
         return json_object
     except json.JSONDecodeError as e:
-        print(f"JSON解析错误: {e}")
         return None
     
 @PromptServer.instance.routes.get("/fk_server")
 async def fksapi(request):
          tget = request.rel_url.query
-         gtype =  tget['type']
-         config_path = os.path.join(os.path.dirname(__file__), "ini.json")
+         gtype =  tget['type']         
          if gtype == "getpz":
+                config_path = os.path.join(os.path.dirname(__file__), "ini.json")
                 return web.json_response(string_to_json(read_file_content(config_path)), content_type='application/json')
+         elif gtype == "getslpz":
+                config_path = os.path.join(os.path.dirname(__file__), "server/data.json")
+                return web.json_response(string_to_json(read_file_content(config_path)), content_type='application/json')
+         elif gtype == "delslpz":
+               config_path = os.path.join(os.path.dirname(__file__), "server/data.json")
+               try:
+                   os.remove(config_path)
+                   return web.json_response({"v":gtype}, content_type='application/json')
+               except OSError:
+                  return web.json_response({"v":gtype}, content_type='application/json')               
          else:
              return web.json_response({"v":gtype}, content_type='application/json')
 @PromptServer.instance.routes.get("/fkhome")
