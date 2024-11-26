@@ -75,9 +75,10 @@ node_lujin = get_nodejs_path()
 def setnev(nd):
     if nd:       
         system = platform.system() 
-        current_path = os.environ.get('PATH', '')        
+        current_path = os.environ.get('PATH', '')      
+        nlijin = nd  
         if system == "Windows":
-            nlijin = nd.replace(f'\\node.exe',f'')            
+            nlijin = nlijin.replace(f'\\node.exe',f'')            
             nlijin = nlijin.replace(f'/node.exe',f'')  
             os.environ["PATH"] = nlijin + ";" + current_path
         else:
