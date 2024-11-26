@@ -73,10 +73,11 @@ def run_node_program(nodepdth,node_script_path):
 
 node_lujin = get_nodejs_path()
 def setnev(nd):
-    if nd:       
+    if nd != "":       
         system = platform.system() 
         current_path = os.environ.get('PATH', '')      
         nlijin = nd  
+        node_lujin = "node"
         if system == "Windows":
             nlijin = nlijin.replace(f'\\node.exe',f'')            
             nlijin = nlijin.replace(f'/node.exe',f'')  
@@ -85,7 +86,7 @@ def setnev(nd):
             nlijin = nlijin.replace(f'/bin/node',f'/bin')            
             nlijin = nlijin.replace(f'\\bin/node',f'\\bin')
             os.environ["PATH"] = nlijin + ":" + current_path
-        node_lujin = "node"
+        
 
 
 if(not node_lujin):
@@ -115,6 +116,9 @@ if (node_lujin):
             print(f'算力环境自动安装失败：请在server目录下执行 npm install 命令安装算力环境')
 
 else:
-    config_path = os.path.join(os.path.dirname(__file__), "server/data.json")
-    os.remove(config_path)
+    config_path = os.path.join(os.path.dirname(__file__), "server/data.json")   
+    try:
+        os.remove(config_path)
+    except Exception as e:
+        pass
     print(f"系统未安装NodeJs，无法运行FKServer云算力环境")
