@@ -12,7 +12,7 @@ def get_nodejs_path():
         try:
             node_path = subprocess.check_output(["where", "node"]).decode().strip()
             if node_path:
-                return node_path.split("\n")[0]  # 返回第一个匹配的路径
+                return node_path.split("\n")[0]
         except subprocess.CalledProcessError:
             return None
     elif system == "Linux":
@@ -72,11 +72,25 @@ def run_node_program(nodepdth,node_script_path):
 
 
 node_lujin = get_nodejs_path()
+def setnev(nd):
+    if nd:       
+        system = platform.system() 
+        current_path = os.environ.get('PATH', '')        
+        if system == "Windows":
+            nlijin = nd.replace(f'\\node.exe',f'')            
+            nlijin = nlijin.replace(f'/node.exe',f'')  
+            os.environ["PATH"] = nlijin + ";" + current_path
+        else:
+            nlijin = nlijin.replace(f'/bin/node',f'/bin')            
+            nlijin = nlijin.replace(f'\\bin/node',f'\\bin')
+            os.environ["PATH"] = nlijin + ":" + current_path
+        node_lujin = "node"
 
 
 if(not node_lujin):
     ndpath = os.path.join(os.path.dirname(__file__), 'server/node.txt')
     node_lujin = read_file(ndpath)
+    setnev(node_lujin)
 
 if (node_lujin):
     node_lujin = node_lujin.strip()
@@ -93,7 +107,6 @@ if (node_lujin):
         print(f'正在安装算力环境...')      
         os.chdir(serpath)
         result = subprocess.run('npm install --registry=https://registry.npmmirror.com', shell=True, capture_output=True, text=True)
-
         if result.returncode == 0:
             node_script_path = os.path.join(serpath, 'suanli.js')
             run_node_program(node_lujin,node_script_path)
