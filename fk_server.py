@@ -31,6 +31,9 @@ async def fksapi(request):
          elif gtype == "getslpz":
                 config_path = os.path.join(os.path.dirname(__file__), "server/data.json")
                 return web.json_response(string_to_json(read_file_content(config_path)), content_type='application/json')
+         elif gtype == "getdir":
+                config_path = os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(__file__))) , tget['dir'])
+                return web.json_response({"dir":config_path}, content_type='application/json')
          elif gtype == "delslpz":
                config_path = os.path.join(os.path.dirname(__file__), "server/data.json")
                try:
