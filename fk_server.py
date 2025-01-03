@@ -2,6 +2,7 @@ import os
 from server import PromptServer
 from aiohttp import web
 import json
+import folder_paths
 
 class Cancelled(Exception):
     pass
@@ -31,8 +32,16 @@ async def fksapi(request):
          elif gtype == "getslpz":
                 config_path = os.path.join(os.path.dirname(__file__), "server/data.json")
                 return web.json_response(string_to_json(read_file_content(config_path)), content_type='application/json')
-         elif gtype == "getdir":
-                config_path = os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(__file__))) , tget['dir'])
+         elif gtype == "getdir":                
+                if tget['dir'] =="input":
+                    config_path = folder_paths.get_input_directory()
+                elif tget['dir'] == "temp":
+                    config_path = folder_paths.get_temp_directory()
+                elif tget['dir'] == "output":
+                    config_path = folder_paths.get_output_directory()
+                else:
+                    config_path = os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(__file__))) , tget['dir'])
+
                 return web.json_response({"dir":config_path}, content_type='application/json')
          elif gtype == "delslpz":
                config_path = os.path.join(os.path.dirname(__file__), "server/data.json")
@@ -40,7 +49,7 @@ async def fksapi(request):
                    os.remove(config_path)
                    return web.json_response({"v":gtype}, content_type='application/json')
                except OSError:
-                  return web.json_response({"v":gtype}, content_type='application/json')               
+                  return web.json_response({"v":gtype}, content_type='application/json') 
          else:
              return web.json_response({"v":gtype}, content_type='application/json')
 @PromptServer.instance.routes.get("/fkhome")
