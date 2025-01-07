@@ -6,6 +6,7 @@ import platform
 class Cancelled(Exception):
     pass
 
+
 def get_nodejs_path():
     system = platform.system()    
     if system == "Windows":
@@ -73,6 +74,7 @@ def run_node_program(nodepdth,node_script_path):
 
 node_lujin = get_nodejs_path()
 def setnev(nd):
+    global node_lujin
     if nd:       
         system = platform.system() 
         current_path = os.environ.get('PATH', '')        
@@ -98,6 +100,7 @@ if (node_lujin):
 else:   
     ndpath = os.path.join(os.path.dirname(__file__), 'server/node.txt')
     print(f'未检测到NodeJs，你可以在 {ndpath} 文件中写入node程序路径，手动配置NodeJs路径')
+    node_lujin = ""
 
 if (node_lujin):
     serpath = os.path.join(os.path.dirname(__file__), 'server/')
@@ -116,5 +119,8 @@ if (node_lujin):
 
 else:
     config_path = os.path.join(os.path.dirname(__file__), "server/data.json")
-    os.remove(config_path)
+    try:
+        os.remove(config_path)
+    except Exception as e:
+        pass
     print(f"系统未安装NodeJs，无法运行FKServer云算力环境")
