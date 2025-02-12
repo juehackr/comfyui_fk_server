@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>疯狂深度贴图程序</title>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js">
+  </script>
+  <link rel="stylesheet" href="src/css/index.css" />
+</head>
+
+<body>
+  <div id="ttapp">
+    <form id="ttdom">
+      <div class="caidan">
+        <ul>
+          <li> 深度图融合算法
+            <select id="ui_sdkg">
+              <option value="1" selected>启用</option>
+              <option value="0">关闭</option>
+            </select>
+          </li>
+          <li>
+            旋转<input id="ui_r" type="range" step="0.05" min="0.0" max="6.31" value="0.0" />
+          </li>
+          <li>
+            形变强度
+            <input type="range" id="ui_deformationStrength" min="0.000" max="5.000" step="0.001" value="2.000">
+          </li>
+          <li>
+            深度阈值<input id="ui_sd" type="range" step="0.05" min="0.0" max="0.9" value="0.05" />
+          </li>
+          <li>
+            贴图不透明度<input id="ui_tmd" type="range" step="0.05" min="0" max="1" value="1" />
+          </li>
+          <li>
+            扭曲X<input id="ui_nqx" type="range" step="0.1" min="-1" max="1" value="0" />
+          </li>
+          <li>
+            扭曲Y<input id="ui_nqy" type="range" step="0.1" min="-1" max="1" value="0" />
+          </li>
+          <li> 混合模式
+            <select id="ui_m">
+              <option value="normal" selected>正常</option>
+              <option value="multiply">正片叠底</option>
+              <option value="darken">变暗</option>
+              <option value="lighten">变亮</option>
+              <option value="color-dodge">颜色减淡</option>
+              <option value="color-burn">颜色加深</option>
+              <option value="hard-light">强光</option>
+              <option value="soft-light">柔光</option>
+              <option value="screen">滤色</option>
+              <option value="overlay">叠加</option>
+              <option value="difference">差值</option>
+              <option value="fanxiang">反向</option>
+              <option value="none">隐藏</option>
+            </select>
+          </li>
+          <li>
+            <button id="ui_sav" onclick="download()" type="button"> <i class="iconfont icon-xiazai"></i> 导出作品</button>
+          </li>
+        </ul>
+        <div class="tips">
+          <p>
+            操作提示：<br/><br/> 1. 深度图需要与背景图尺寸比例一致，鼠标左键拖拽或按方向键可移动贴图，鼠标滚轮缩放贴图，所见即所得。
+            <br/><br/>2. 界面与画布操作参数会自动保存，如需恢复默认，请点击<a id="chushihuacs">《初始化参数》</a>。
+            <br/><br/>3. 意见建议反馈：<a href="https://github.com/juehackr/comfyui_fk_server" target="_blank">Github</a>。
+          </p>
+         
+        </div>
+      </div>
+      <div id="tthuabu">
+        <div id="container">
+          <canvas id="canvas"></canvas>
+        </div>
+      </div>
+    </form>
+
+  </div>
+
+  <script src="src/js/index.js"></script>
+</body>
+
+</html>

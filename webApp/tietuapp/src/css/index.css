@@ -1,0 +1,115 @@
+body {
+  margin: 0px;
+  padding: 0px;
+  background-color: #1f1f1f;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+#container {
+  margin: auto auto;
+}
+
+#canvas {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+#tthuabu {
+  width: calc(100vw - 200px);
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAIAAAD/gAIDAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAQBJREFUeNrs1rEKwjAUhlETUkj3vP9rdmr1Ysammk2w5wdxuLgcMHyptfawuZX4pJSWZTnfnu/lnIe/jNNxHHGNn//HNbbv+4dr6V+11uF527arU7+u63qfa/bnmh8sWLBgwYJlqRf8MEptXPBXJXa37BSl3ixYsGDBMliwFLyCV/DeLIMFCxYsWLBMwSt4Be/NggXLYMGCBUvBK3iNruC9WbBgwYJlsGApeAWv4L1ZBgsWLFiwYJmCV/AK3psFC5bBggULloJX8BpdwXuzYMGCBctgwVLwCl7Be7MMFixYsGDBsu8FH1FaSmExVfAxBa/gvVmwYMGCZbBg/W4vAQYA5tRF9QYlv/QAAAAASUVORK5CYII=') repeat;
+}
+
+#ttdom {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+}
+
+.caidan ul {
+  padding: 0px;
+}
+
+.caidan li {
+  list-style: none;
+  padding-bottom: 5px;
+}
+
+.caidan {
+  width: 200px;
+  height: 100vh;
+  align-items: center;
+  color: #eee;
+  background-color: #303030;
+  padding: 10px;
+  padding-top: 0px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+.caidan h3 {
+  padding: 8px 0px;
+  margin: 0px;
+  font-weight: 400;
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 10px;
+}
+
+.caidan input[type="range"] {
+  width: 100%;
+  margin: 5px 0;
+}
+
+.caidan select {
+  width: 100%;
+  padding: 5px;
+  margin-top: 10px;
+}
+
+.caidan .tips {
+  font-size: 14px;
+}
+
+#ui_sav {
+  margin-top: 10px;
+  width: 100%;
+  padding: 8px 15px;
+  font-size: 16px;
+  border-radius: 5px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  line-height: 1;
+  height: 40px;
+  white-space: nowrap;
+  cursor: pointer;
+  color: #fff;
+  text-align: center;
+  box-sizing: border-box;
+  outline: none;
+  transition: .1s;
+  -webkit-user-select: none;
+  user-select: none;
+  vertical-align: middle;
+  background-color: #67c23a;
+  border: 0;
+  border-color: #67c23a;
+}
+
+#ui_sav:hover {
+  background-color: #67c23a;
+  border-color: #67c23a;
+  opacity: .85;
+}
+
+.tips a{
+ cursor: pointer; 
+ color: #ddd;
+}
+.tips a:hover {
+  color: #67c23a;
+}

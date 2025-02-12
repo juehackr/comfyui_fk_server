@@ -22,6 +22,48 @@ def string_to_json(json_string):
     except json.JSONDecodeError as e:
         return None
     
+current_path = os.path.abspath(os.path.dirname(__file__))
+@PromptServer.instance.routes.get('/fk_server/app/{filename:.*}')
+async def static_file_handler(request):
+    filename = request.match_info['filename']
+    file_path = os.path.join(current_path, "webApp", filename)
+    #print(file_path)
+    if os.path.exists(file_path) and os.path.isfile(file_path):
+        # 定义二进制文件类型
+        binary_types = {'.png', '.jpg', '.jpeg', '.gif', '.webp', '.ico', '.bmp'}
+        # 定义内容类型映射
+        content_types = {
+            '.js': 'application/javascript',
+            '.css': 'text/css',
+            '.html': 'text/html',
+            '.svg': 'image/svg+xml',
+            '.png': 'image/png',
+            '.jpg': 'image/jpeg',
+            '.jpeg': 'image/jpeg',
+            '.gif': 'image/gif',
+            '.webp': 'image/webp',
+            '.ico': 'image/x-icon',
+            '.bmp': 'image/bmp'
+        }
+        
+        # 获取文件扩展名
+        file_ext = os.path.splitext(filename)[1].lower()
+        content_type = content_types.get(file_ext, 'application/octet-stream')
+        
+        # 根据文件类型选择不同的读取模式
+        if file_ext in binary_types:
+            # 二进制模式读取
+            with open(file_path, 'rb') as f:
+                file_data = f.read()
+                return web.Response(body=file_data, content_type=content_type)
+        else:
+            # 文本模式读取
+            with open(file_path, 'r', encoding='utf-8', errors='ignore') as f:
+                file_data = f.read()
+                return web.Response(text=file_data, content_type=content_type)
+    else:
+        return web.Response(text="File not found", status=404)
+
 @PromptServer.instance.routes.get("/fk_server")
 async def fksapi(request):
          tget = request.rel_url.query
@@ -79,5 +121,5 @@ async def fkpostapi(request):
 
 
 
-print(f"\33[93m》===>====>========>Fk_Server:OK!<========<====<===《\33[0m")
+print(f"\33[93m》===>====>========>Fk_Server:OK！<========<====<===《\33[0m")
 

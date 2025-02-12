@@ -204,3 +204,14 @@ textarea.fk-textarea-shuru {
     display: inline-block !important;
     background-size: cover;
 }
+
+.fktooliframe{
+    position: absolute;
+    z-index: 999999999;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 2px solid #303030;
+    border-radius: 5px;
+    overflow: hidden;
+}
