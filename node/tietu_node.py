@@ -42,14 +42,7 @@ class FKTietuNode:
                 print(f"Texture处理错误: {str(e)}")        
         base64_image1 = self.encode_image(background) or ""
         base64_image2 = self.encode_image(Depth) or ""        
-        return {
-            "ui": {
-                "backgroundcode": [base64_image1],
-                "Depthcode": [base64_image2],
-                "Texturecode": [base64_image3]
-            }, 
-            "result": (base64_image1, base64_image2, base64_image3)
-        }
+        return {"result": (base64_image1, base64_image2, base64_image3)}
     
     def encode_image(self, image):
         try:
