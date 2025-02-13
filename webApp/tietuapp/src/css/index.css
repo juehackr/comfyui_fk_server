@@ -1,7 +1,38 @@
+:root {
+  --bgse: #1f1f1f;
+  --wenbse: #eee;
+  --caidanse: #303030;
+  --bks: #ddd;
+  --bgimg: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAIAAAD/gAIDAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAQBJREFUeNrs1rEKwjAUhlETUkj3vP9rdmr1Ysammk2w5wdxuLgcMHyptfawuZX4pJSWZTnfnu/lnIe/jNNxHHGNn//HNbbv+4dr6V+11uF527arU7+u63qfa/bnmh8sWLBgwYJlqRf8MEptXPBXJXa37BSl3ixYsGDBMliwFLyCV/DeLIMFCxYsWLBMwSt4Be/NggXLYMGCBUvBK3iNruC9WbBgwYJlsGApeAWv4L1ZBgsWLFiwYJmCV/AK3psFC5bBggULloJX8BpdwXuzYMGCBctgwVLwCl7Be7MMFixYsGDBsu8FH1FaSmExVfAxBa/gvVmwYMGCZbBg/W4vAQYA5tRF9QYlv/QAAAAASUVORK5CYII=') repeat;
+}
+
+
+/* 修改滚动条的宽度和颜色 */
+::-webkit-scrollbar {
+  width: 6px;
+  background-color: var(--caidanse);
+}
+
+::-webkit-scrollbar-corner {
+  display: none;
+}
+
+/* 修改滚动条滑块的样式 */
+::-webkit-scrollbar-thumb {
+  background-color: var(--bgse);
+  border-radius: 5px;
+  /* 修改滑块圆角 */
+}
+
+/* 修改滚动条滑块悬停时的样式 */
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--bgse);
+}
+
 body {
   margin: 0px;
   padding: 0px;
-  background-color: #1f1f1f;
+  background-color: var(--bgse);
   width: 100vw;
   height: 100vh;
   overflow: hidden;
@@ -21,7 +52,7 @@ body {
   height: 100vh;
   display: flex;
   align-items: center;
-  background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAIAAAD/gAIDAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAQBJREFUeNrs1rEKwjAUhlETUkj3vP9rdmr1Ysammk2w5wdxuLgcMHyptfawuZX4pJSWZTnfnu/lnIe/jNNxHHGNn//HNbbv+4dr6V+11uF527arU7+u63qfa/bnmh8sWLBgwYJlqRf8MEptXPBXJXa37BSl3ixYsGDBMliwFLyCV/DeLIMFCxYsWLBMwSt4Be/NggXLYMGCBUvBK3iNruC9WbBgwYJlsGApeAWv4L1ZBgsWLFiwYJmCV/AK3psFC5bBggULloJX8BpdwXuzYMGCBctgwVLwCl7Be7MMFixYsGDBsu8FH1FaSmExVfAxBa/gvVmwYMGCZbBg/W4vAQYA5tRF9QYlv/QAAAAASUVORK5CYII=') repeat;
+  background: var(--bgimg);
 }
 
 #ttdom {
@@ -43,19 +74,20 @@ body {
   width: 200px;
   height: 100vh;
   align-items: center;
-  color: #eee;
-  background-color: #303030;
+  color: var(--wenbse);
+  background-color: var(--caidanse);
   padding: 10px;
   padding-top: 0px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   margin-bottom: 20px;
+  overflow: auto;
 }
 
 .caidan h3 {
   padding: 8px 0px;
   margin: 0px;
   font-weight: 400;
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid var(--bks);
   margin-bottom: 10px;
 }
 
@@ -106,10 +138,11 @@ body {
   opacity: .85;
 }
 
-.tips a{
- cursor: pointer; 
- color: #ddd;
+.tips a {
+  cursor: pointer;
+  color: var(--wenbse);
 }
+
 .tips a:hover {
   color: #67c23a;
 }
