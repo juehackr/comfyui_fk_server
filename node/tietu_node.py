@@ -20,24 +20,27 @@ class FKTietuNode:
         base64_image3 = ""        
         if Texture is not None and TextureMask is not None:
             try:
-                texture_array = Texture.cpu().numpy()[0]                  
-                try:
-                    mask_array = TextureMask.cpu().numpy()
-                    if len(mask_array.shape) == 3:
-                        mask_array = mask_array[0]  
-                    
-                    if mask_array.shape[:2] != texture_array.shape[:2]:
-                        raise ValueError("遮罩尺寸与图像不匹配")                        
-                    mask_array = 1.0 - mask_array    
-                    rgba = np.zeros((*texture_array.shape[:2], 4), dtype=np.uint8)
-                    rgba[..., :3] = np.clip(texture_array * 255, 0, 255).astype(np.uint8)  
-                    rgba[..., 3] = np.clip(mask_array * 255, 0, 255).astype(np.uint8)                      
-                    texture_with_mask = Image.fromarray(rgba, 'RGBA')                    
-                    buffered = BytesIO()
-                    texture_with_mask.save(buffered, format="PNG")
-                    base64_image3 = base64.b64encode(buffered.getvalue()).decode("utf-8")
-                except Exception as e:                    
+                texture_array = Texture.cpu().numpy()[0]          
+                if texture_array.shape[-1] == 4:
                     base64_image3 = self.encode_image(Texture) or ""
+                else:
+                    try:
+                        mask_array = TextureMask.cpu().numpy()
+                        if len(mask_array.shape) == 3:
+                            mask_array = mask_array[0]  
+                        
+                        if mask_array.shape[:2] != texture_array.shape[:2]:
+                            raise ValueError("遮罩尺寸与图像不匹配")                        
+                        mask_array = 1.0 - mask_array    
+                        rgba = np.zeros((*texture_array.shape[:2], 4), dtype=np.uint8)
+                        rgba[..., :3] = np.clip(texture_array * 255, 0, 255).astype(np.uint8)  
+                        rgba[..., 3] = np.clip(mask_array * 255, 0, 255).astype(np.uint8)                      
+                        texture_with_mask = Image.fromarray(rgba, 'RGBA')                    
+                        buffered = BytesIO()
+                        texture_with_mask.save(buffered, format="PNG")
+                        base64_image3 = base64.b64encode(buffered.getvalue()).decode("utf-8")
+                    except Exception as e:                    
+                        base64_image3 = self.encode_image(Texture) or ""
             except Exception as e:
                 print(f"Texture处理错误: {str(e)}")        
         base64_image1 = self.encode_image(background) or ""
@@ -49,7 +52,10 @@ class FKTietuNode:
             if image is not None:
                 img = image.cpu().numpy()[0]
                 img = np.clip(img * 255, 0, 255).astype(np.uint8)
-                img = Image.fromarray(img, 'RGB')
+                if img.shape[-1] == 4:
+                    img = Image.fromarray(img, 'RGBA')
+                else:
+                    img = Image.fromarray(img, 'RGB')
                 buffered = BytesIO()
                 img.save(buffered, format="PNG")
                 return base64.b64encode(buffered.getvalue()).decode("utf-8")
