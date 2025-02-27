@@ -62,7 +62,7 @@ body {
 }
 
 .caidan ul {
-  padding: 0px;
+  padding: 13px 0px;
 }
 
 .caidan li {
@@ -104,6 +104,10 @@ body {
 
 .caidan .tips {
   font-size: 14px;
+  padding-bottom: 10px;
+}
+.r{
+  float: right;
 }
 
 #ui_sav {
@@ -138,7 +142,7 @@ body {
   opacity: .85;
 }
 
-.tips a {
+.tips a,#qhc {
   cursor: pointer;
   color: var(--wenbse);
 }
