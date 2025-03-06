@@ -64,13 +64,31 @@ async def static_file_handler(request):
     else:
         return web.Response(text="File not found", status=404)
 
+
+def find_image_files(directory,qianzhui):
+    image_extensions = {'.png', '.jpg', '.jpeg', '.gif', '.webp', '.bmp'}
+    result = {}
+    for root, dirs, files in os.walk(directory):
+        for file in files:
+            file_ext = os.path.splitext(file)[1].lower()
+            if file_ext in image_extensions:
+                relative_path = os.path.relpath(root, directory)
+                if relative_path not in result:
+                    result[relative_path] = {"dir":os.path.join(qianzhui, relative_path), "files": []}
+                result[relative_path]["files"].append({"u":"", "name": file})      
+    return json.dumps(result, indent=4)
 @PromptServer.instance.routes.get("/fk_server")
 async def fksapi(request):
          tget = request.rel_url.query
          gtype =  tget['type']         
          if gtype == "getpz":
                 config_path = os.path.join(os.path.dirname(__file__), "ini.json")
-                return web.json_response(string_to_json(read_file_content(config_path)), content_type='application/json')
+                pznr = string_to_json(read_file_content(config_path))
+                if pznr=={}:
+                     pznr = {"appid": "","key": "","zhitsc": "请你根据我输入的AI绘画提示词，进行专业的润色，并用中文直接输出结果（输出结果不要附带任何无关内容），以下是我的AI绘画提示词：","zhipukey": "","slkg":False}
+                     with open(config_path, 'w', encoding='utf-8') as file:
+                        json.dump(pznr, file, ensure_ascii=False, indent=4)               
+                return web.json_response(pznr, content_type='application/json')
          elif gtype == "getslpz":
                 config_path = os.path.join(os.path.dirname(__file__), "server/data.json")
                 return web.json_response(string_to_json(read_file_content(config_path)), content_type='application/json')
@@ -82,9 +100,13 @@ async def fksapi(request):
                 elif tget['dir'] == "output":
                     config_path = folder_paths.get_output_directory()
                 else:
-                    config_path = os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(__file__))) , tget['dir'])
-
+                    config_path = os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(__file__))) , tget['dir'])   
                 return web.json_response({"dir":config_path}, content_type='application/json')
+         elif gtype == "getmoban": 
+               #http://127.0.0.1:8188/fk_server?type=getmoban&dir=%E5%85%B6%E5%AE%83
+               config_path = os.path.join(folder_paths.get_input_directory(), "moban")
+               json_output = find_image_files(os.path.join(config_path, tget['dir']),os.path.join("moban", tget['dir']))
+               return web.json_response(string_to_json(json_output), content_type='application/json')
          elif gtype == "delslpz":
                config_path = os.path.join(os.path.dirname(__file__), "server/data.json")
                try:
@@ -102,24 +124,32 @@ async def fkweb(request):
             )
 @PromptServer.instance.routes.post('/fk_server')
 async def fkpostapi(request):
-    post = await request.post()
-    bdappid = post.get("bdappid")
-    bdappkey = post.get("appbdkey") 
-    zhitsc = post.get("zhitsc")
-    zhipukey = post.get("zhipukey") 
-    if bdappid and bdappkey:
-        config_path = os.path.join(os.path.dirname(__file__), "ini.json")
-        config_data = string_to_json(read_file_content(config_path))
-        print(f"Comfyui_fk_server：密钥设置成功")
-        config_data["appid"] = bdappid
-        config_data["key"] = bdappkey
-        config_data["zhitsc"] = zhitsc
-        config_data["zhipukey"] = zhipukey
-        with open(config_path, 'w', encoding='utf-8') as file:
-             json.dump(config_data, file, ensure_ascii=False, indent=4)
-    return web.json_response({})
-
+        tget = request.rel_url.query
+        gtype =  tget['type'] 
+        post = await request.post()
+        if gtype == "setpz":            
+            bdappid = post.get("bdappid")
+            bdappkey = post.get("appbdkey") 
+            zhitsc = post.get("zhitsc")
+            zhipukey = post.get("zhipukey") 
+            if bdappid and bdappkey:
+                config_path = os.path.join(os.path.dirname(__file__), "ini.json")
+                config_data = string_to_json(read_file_content(config_path))
+                print(f"Comfyui_fk_server：密钥设置成功")
+                config_data["appid"] = bdappid
+                config_data["key"] = bdappkey
+                config_data["zhitsc"] = zhitsc
+                config_data["zhipukey"] = zhipukey
+                with open(config_path, 'w', encoding='utf-8') as file:
+                    json.dump(config_data, file, ensure_ascii=False, indent=4)
+        elif gtype == "setslkg":
+                config_path = os.path.join(os.path.dirname(__file__), "ini.json")
+                config_data = string_to_json(read_file_content(config_path))
+                config_data["slkg"] = post.get("slkg")
+                with open(config_path, 'w', encoding='utf-8') as file:
+                    json.dump(config_data, file, ensure_ascii=False, indent=4)
+                return web.json_response({}, content_type='application/json')
+        return web.json_response({}, content_type='application/json')
 
 
 print(f"\33[93m》===>====>========>Fk_Server:OK！<========<====<===《\33[0m")
-
