@@ -103,10 +103,18 @@ async def fksapi(request):
                     config_path = os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(__file__))) , tget['dir'])   
                 return web.json_response({"dir":config_path}, content_type='application/json')
          elif gtype == "getmoban": 
-               #http://127.0.0.1:8188/fk_server?type=getmoban&dir=%E5%85%B6%E5%AE%83
                config_path = os.path.join(folder_paths.get_input_directory(), "moban")
-               json_output = find_image_files(os.path.join(config_path, tget['dir']),os.path.join("moban", tget['dir']))
-               return web.json_response(string_to_json(json_output), content_type='application/json')
+               json_output = '{}'
+               if 'dir' in tget:
+                 json_output = find_image_files(os.path.join(config_path, tget['dir']),os.path.join("moban", tget['dir']))
+                 return web.json_response(string_to_json(json_output), content_type='application/json')
+               elif 'dira' in tget:
+                 dira = tget['dira'].split("|")
+                 alrrjs = {}
+                 for dir in dira:
+                    alrrjs[dir] =string_to_json(find_image_files(os.path.join(config_path, dir),os.path.join("moban", dir)))
+                 return web.json_response(alrrjs, content_type='application/json')    
+               
          elif gtype == "delslpz":
                config_path = os.path.join(os.path.dirname(__file__), "server/data.json")
                try:
