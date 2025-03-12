@@ -1,6 +1,7 @@
 import os
 from server import PromptServer
 from aiohttp import web
+from PIL import Image
 import json
 import folder_paths
 
@@ -58,11 +59,33 @@ async def static_file_handler(request):
         return web.Response(text="File not found", status=404)
 
 
+def resize_and_save_image(img_path, width):  
+    original_dir = os.path.dirname(img_path)
+    save_dir = os.path.join(original_dir, "fenmian")    
+    filename = os.path.basename(img_path)
+    name, ext = os.path.splitext(filename)
+    target_filename = f"{name}_w{width}{ext}"
+    target_path = os.path.join(save_dir, target_filename)    
+    if os.path.exists(target_path):
+        return target_path    
+    os.makedirs(save_dir, exist_ok=True)    
+    try:
+        with Image.open(img_path) as img:
+            original_width, original_height = img.size
+            ratio = width / original_width
+            new_height = int(original_height * ratio)            
+            resized_img = img.resize((width, new_height), Image.LANCZOS)
+            resized_img.save(target_path, quality=85)
+            return target_path
+    except Exception as e:
+        return None
+
 def find_image_files(directory, qianzhui):
     image_extensions = {'.png', '.jpg', '.jpeg', '.gif', '.webp', '.bmp'}
     
     dir_structure = {}
     for root, dirs, files in os.walk(directory):
+        dirs[:] = [d for d in dirs if d != 'fenmian']     
         relative_path = os.path.relpath(root, directory)
         current_files = []
         if relative_path != '.':
@@ -92,6 +115,38 @@ def find_image_files(directory, qianzhui):
         return node
     
     return json.dumps(build_nested('.'), indent=4)
+@PromptServer.instance.routes.get("/fkimgview")
+async def fksapi(request):
+         tget = request.rel_url.query
+         tpath =  tget['path']
+         tsize =  tget['size']
+         config_path = folder_paths.get_input_directory()
+         imglj = os.path.join(config_path, tpath)
+         if os.path.exists(imglj):
+            img = resize_and_save_image(imglj, int(tsize))
+            if img:
+                 file_ext = os.path.splitext(img)[1].lower()
+                 content_types = {
+                        '.png': 'image/png',
+                        '.jpg': 'image/jpeg',
+                        '.jpeg': 'image/jpeg',
+                        '.gif': 'image/gif',
+                        '.webp': 'image/webp',
+                        '.bmp': 'image/bmp'
+                    }
+                 content_type = content_types.get(file_ext, 'image/png')                    
+                 return web.Response(
+                        body=open(img, 'rb').read(),
+                        content_type=content_type
+                    )
+            else:
+                return web.Response(text=imglj,content_type="text/html")
+         else:
+            return web.Response(text="文件不存在",content_type="text/html")
+         
+
+
+
 @PromptServer.instance.routes.get("/fk_server")
 async def fksapi(request):
          tget = request.rel_url.query
