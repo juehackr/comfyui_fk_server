@@ -4,7 +4,7 @@ from aiohttp import web
 from PIL import Image
 import json
 import folder_paths
-
+base_path = os.path.dirname(os.path.realpath(__file__))
 class Cancelled(Exception):
     pass
 def read_file_content(file_path):
@@ -119,9 +119,8 @@ def find_image_files(directory, qianzhui):
 async def fksapi(request):
          tget = request.rel_url.query
          tpath =  tget['path']
-         tsize =  tget['size']
-         config_path = folder_paths.get_input_directory()
-         imglj = os.path.join(config_path, tpath)
+         tsize =  tget['size']         
+         imglj = os.path.join(base_path, tpath)
          if os.path.exists(imglj):
             img = resize_and_save_image(imglj, int(tsize))
             if img:
@@ -172,17 +171,17 @@ async def fksapi(request):
                 else:
                     config_path = os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(__file__))) , tget['dir'])   
                 return web.json_response({"dir":config_path}, content_type='application/json')
-         elif gtype == "getmoban": 
-               config_path = os.path.join(folder_paths.get_input_directory(), "moban")
+         elif gtype == "getmoban":             
+               config_path = os.path.join(base_path, "moban")
                json_output = '{}'
                if 'dir' in tget:
-                 json_output = find_image_files(os.path.join(config_path, tget['dir']),os.path.join("moban", tget['dir']))
+                 json_output = find_image_files(os.path.join(config_path, tget['dir']),os.path.join(config_path, tget['dir']))
                  return web.json_response(string_to_json(json_output), content_type='application/json')
                elif 'dira' in tget:
                  dira = tget['dira'].split("|")
                  alrrjs = {}
                  for dir in dira:
-                    alrrjs[dir] =string_to_json(find_image_files(os.path.join(config_path, dir),os.path.join("moban", dir)))
+                    alrrjs[dir] =string_to_json(find_image_files(os.path.join(config_path, dir),os.path.join(config_path, dir)))
                  return web.json_response(alrrjs, content_type='application/json')    
                
          elif gtype == "delslpz":
