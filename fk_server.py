@@ -85,7 +85,15 @@ def find_image_files(directory, qianzhui):
     
     dir_structure = {}
     for root, dirs, files in os.walk(directory):
-        dirs[:] = [d for d in dirs if d != 'fenmian']     
+        dirs[:] = sorted(
+            [d for d in dirs if d != 'fenmian'],
+            key=lambda x: x.lower()
+        )        
+        files = sorted(
+            files,
+            key=lambda x: os.path.splitext(x)[0].lower()
+        )
+        
         relative_path = os.path.relpath(root, directory)
         current_files = []
         if relative_path != '.':
