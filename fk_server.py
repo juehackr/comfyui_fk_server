@@ -60,6 +60,9 @@ async def static_file_handler(request):
 
 
 def resize_and_save_image(img_path, width):  
+    image_extensions = {'.png', '.jpg', '.jpeg', '.gif', '.webp', '.bmp'}
+    if os.path.splitext(img_path)[1].lower() not in image_extensions:
+        return None
     original_dir = os.path.dirname(img_path)
     save_dir = os.path.join(original_dir, "fenmian")    
     filename = os.path.basename(img_path)
@@ -147,13 +150,10 @@ async def fksapi(request):
                         content_type=content_type
                     )
             else:
-                return web.Response(text=imglj,content_type="text/html")
+                return web.Response(body=open(imglj, 'rb').read() ,content_type="application/octet-stream")
          else:
             return web.Response(text="文件不存在",content_type="text/html")
-         
-
-
-
+   
 @PromptServer.instance.routes.get("/fk_server")
 async def fksapi(request):
          tget = request.rel_url.query
