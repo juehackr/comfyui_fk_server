@@ -10,7 +10,7 @@
 
 **✅3D姿态编辑器(3D Openpose Editor)：简单好用的3D姿态编辑器节点**
 
-**✅PS互通插件：一键实现comfyUI与PS互通交互，支持win和mac系统（PS端插件下载：https://pan.baidu.com/s/1Mh8JO2nvkRvBAt4b9W15Xw?pwd=fkai）**
+**✅PS互通插件：一键实现comfyUI与PS互通交互，支持win和mac系统（PS端插件下载：https://pan.baidu.com/s/1Mh8JO2nvkRvBAt4b9W15Xw?pwd=fkai ）**
 
 **✅云算力环境配置**
 
