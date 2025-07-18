@@ -200,7 +200,7 @@ async def fksapi(request):
                except OSError:
                   return web.json_response({"v":gtype}, content_type='application/json') 
          else:
-             return web.json_response({"v":gtype}, content_type='application/json')
+             return web.json_response({"v":gtype,"bb":"3.0"}, content_type='application/json')
 @PromptServer.instance.routes.get("/fkhome")
 async def fkweb(request): 
          return web.Response(
