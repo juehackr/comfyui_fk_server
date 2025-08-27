@@ -1,9 +1,11 @@
 import os
+import comfy.utils
 from server import PromptServer
 from aiohttp import web
 from PIL import Image
 import json
 import folder_paths
+from folder_paths import map_legacy, filter_files_extensions, filter_files_content_types
 base_path = os.path.dirname(os.path.realpath(__file__))
 class Cancelled(Exception):
     pass
@@ -154,6 +156,27 @@ async def fksapi(request):
          else:
             return web.Response(text="文件不存在",content_type="text/html")
    
+@PromptServer.instance.routes.get("/fkmodimg")
+async def getmdoimg(request):        
+         tget = request.rel_url.query
+         folder_name = tget['dir']
+         folders = folder_paths.folder_names_and_paths[folder_name]
+         mx = tget['mx']       
+         mxpic = os.path.splitext(mx)[0] + ".preview.png"
+         mxpic2 = os.path.splitext(mx)[0] + ".png"
+         for index, folder in enumerate(folders[0]):
+           fm1 = os.path.join(folder, mxpic)
+           fm2 = os.path.join(folder, mxpic2)
+           if os.path.exists(fm1):
+                return web.Response(body=open(fm1, 'rb').read() ,content_type="image/png")
+           elif os.path.exists(fm2):
+                return web.Response(body=open(fm2, 'rb').read() ,content_type="image/png")
+           else:
+            notpic = os.path.join(os.path.dirname(__file__), "web/cssjs/notpic.jpg")
+            if os.path.exists(notpic):
+                return web.Response(body=open(notpic, 'rb').read() ,content_type="image/jpeg")
+            else:
+                return web.Response(text="封面文件不存在",content_type="text/html")
 @PromptServer.instance.routes.get("/fk_server")
 async def fksapi(request):
          tget = request.rel_url.query
