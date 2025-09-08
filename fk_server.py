@@ -164,13 +164,23 @@ async def getmdoimg(request):
          mx = tget['mx']       
          mxpic = os.path.splitext(mx)[0] + ".preview.png"
          mxpic2 = os.path.splitext(mx)[0] + ".png"
+         mxpic3 = os.path.splitext(mx)[0] + ".jpg"
+         mxpic4 = os.path.splitext(mx)[0] + ".preview.jpg"
+
+
          for index, folder in enumerate(folders[0]):
            fm1 = os.path.join(folder, mxpic)
            fm2 = os.path.join(folder, mxpic2)
+           fm3 = os.path.join(folder, mxpic3)
+           fm4 = os.path.join(folder, mxpic4)
            if os.path.exists(fm1):
                 return web.Response(body=open(fm1, 'rb').read() ,content_type="image/png")
            elif os.path.exists(fm2):
                 return web.Response(body=open(fm2, 'rb').read() ,content_type="image/png")
+           elif os.path.exists(fm3):
+                return web.Response(body=open(fm3, 'rb').read() ,content_type="image/jpeg")
+           elif os.path.exists(fm4):
+                return web.Response(body=open(fm4, 'rb').read() ,content_type="image/jpeg")
            else:
             notpic = os.path.join(os.path.dirname(__file__), "web/cssjs/notpic.jpg")
             if os.path.exists(notpic):
