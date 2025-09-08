@@ -1,0 +1,149 @@
+ html,
+        body {
+            margin: 0;
+            padding: 0;
+            background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAIAAAD/gAIDAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAQBJREFUeNrs1rEKwjAUhlETUkj3vP9rdmr1Ysammk2w5wdxuLgcMHyptfawuZX4pJSWZTnfnu/lnIe/jNNxHHGNn//HNbbv+4dr6V+11uF527arU7+u63qfa/bnmh8sWLBgwYJlqRf8MEptXPBXJXa37BSl3ixYsGDBMliwFLyCV/DeLIMFCxYsWLBMwSt4Be/NggXLYMGCBUvBK3iNruC9WbBgwYJlsGApeAWv4L1ZBgsWLFiwYJmCV/AK3psFC5bBggULloJX8BpdwXuzYMGCBctgwVLwCl7Be7MMFixYsGDBsu8FH1FaSmExVfAxBa/gvVmwYMGCZbBg/W4vAQYA5tRF9QYlv/QAAAAASUVORK5CYII=');
+            background-repeat: repeat;
+        }
+
+        .canvas-container {
+            position: relative;
+            overflow: hidden;
+            min-height: 300px;
+            width: 100%;
+            margin: auto auto;
+        }
+
+        #fabric-canvas {
+            width: 100%;
+            height: auto;
+        }
+
+        .controls {
+            position: fixed;
+            bottom: 1rem;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(4px);
+            padding: 0.5rem 1rem;
+            border-radius: 9999px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            display: flex;
+            gap: 0.75rem;
+            z-index: 10;
+        }
+
+        .control-btn {
+            width: 2.5rem;
+            height: 2.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 9999px;
+            background-color: #3B82F6;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+
+        .control-btn:hover {
+            background-color: #2563EB;
+        }
+
+        .keyboard-hint {
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            background-color: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(4px);
+            padding: 0.5rem 0.75rem;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            font-size: 0.875rem;
+            color: #4B5563;
+        }
+
+        .image-input-container {
+            position: fixed;
+            top: 1rem;
+            right: 1rem;
+            background-color: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(4px);
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            z-index: 10;
+            width: 2.5rem;
+            height: 2.5rem;
+            transition: all 0.3s ease;
+            overflow: hidden;
+        }
+
+        .image-input-container:hover {
+            width: auto;
+            height: auto;
+            padding: 0.75rem;
+        }
+
+        /* 鼠标经过时隐藏设置按钮图标 */
+        .image-input-container:hover .image-input-toggle {
+            display: none;
+        }
+
+        .image-input-toggle {
+            width: 2.5rem;
+            height: 2.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            color: #4B5563;
+        }
+
+        .image-input-content {
+            display: none;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .image-input-container:hover .image-input-content {
+            display: flex;
+        }
+
+        .image-input-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+        }
+
+        .image-input-group label {
+            font-size: 0.75rem;
+            color: #4B5563;
+            font-weight: 500;
+        }
+
+        .image-input-group input[type="text"] {
+            padding: 0.25rem 0.5rem;
+            border: 1px solid #ddd;
+            border-radius: 0.25rem;
+            font-size: 0.75rem;
+        }
+
+        .image-input-group input[type="file"] {
+            display: none;
+        }
+
+        .image-upload-btn {
+            padding: 0.25rem 0.5rem;
+            background-color: #3B82F6;
+            color: white;
+            border: none;
+            border-radius: 0.25rem;
+            font-size: 0.75rem;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+
+        .image-upload-btn:hover {
+            background-color: #2563EB;
+        }

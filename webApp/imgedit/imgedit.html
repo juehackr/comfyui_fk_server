@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FK简易图片合成编辑器</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/fabric@5.3.0/dist/fabric.min.js"></script>
+    <script>window.fabric || document.write('<script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/5.3.0/fabric.min.js"><\/script>')</script>
+    <link rel="stylesheet" href="./cssjs/main.css">
+</head>
+<body
+    style="font-family: 'Inter', sans-serif; background-color: #fafafa; min-height: 100vh; display: flex; flex-direction: column; align-items: center;">
+    <div style="width:100%;  margin: auto auto;">
+        <div id="canvas-container" class="canvas-container">
+        </div>
+        <div class="image-input-container" style="display: none;">
+            <div class="image-input-toggle">
+                <i class="fa fa-cog fa-lg"></i>
+            </div>
+            <div class="image-input-content">
+                <div class="image-input-group">
+                    <button class="image-upload-btn"
+                        onclick="document.getElementById('bg-image-file').click()">替换背景图</button>
+                    <input type="file" id="bg-image-file" accept="image/*" onchange="updateBackgroundImage('')">
+                </div>
+                <div class="image-input-group">
+                    <button class="image-upload-btn"
+                        onclick="document.getElementById('fg-image-file-1').click()">替换前景图1</button>
+                    <input type="file" id="fg-image-file-1" accept="image/*" onchange="updateForegroundImage('', 0)">
+                </div>
+                <div class="image-input-group">
+                    <button class="image-upload-btn"
+                        onclick="document.getElementById('fg-image-file-2').click()">替换前景图2</button>
+                    <input type="file" id="fg-image-file-2" accept="image/*" onchange="updateForegroundImage('', 1)">
+                </div>
+            </div>
+        </div>
+        <div class="controls" style="display: none;">
+            <button id="reset-btn" class="control-btn" title="重置视图">
+                <i class="fa fa-refresh"></i>
+            </button>
+            <div class="blend-mode-control" style="display: flex; align-items: center; gap: 0.5rem;">
+                <i class="fa fa-magic" style="color: #3B82F6;"></i>
+                <select id="blend-mode-select"
+                    style="background: white; border: 1px solid #ddd; border-radius: 4px; padding: 2px 8px; font-size: 0.75rem;">
+                    <option value="source-over">正常</option>
+                    <option value="multiply">正片叠底</option>
+                    <option value="screen">滤色</option>
+                    <option value="overlay">叠加</option>
+                    <option value="darken">变暗</option>
+                    <option value="lighten">变亮</option>
+                    <option value="color-dodge">颜色减淡</option>
+                    <option value="color-burn">颜色加深</option>
+                    <option value="hard-light">强光</option>
+                    <option value="soft-light">柔光</option>
+                    <option value="difference">差值</option>
+                    <option value="exclusion">排除</option>
+                </select>
+            </div>
+            <div class="opacity-control" style="display: flex; align-items: center; gap: 0.5rem;">
+                <i class="fa fa-tint" style="color: #3B82F6;"></i>
+                <input type="range" id="opacity-slider" min="0" max="1" step="0.1" value="1"
+                    style="width: 80px; -webkit-appearance: none; height: 6px; border-radius: 3px; background: #ddd; outline: none;">
+            </div>
+            <button id="download-btn" class="control-btn" title="提交编辑">
+                <i class="fa fa-check"></i>
+            </button>
+        </div>
+    </div>
+
+    <script src="./cssjs/main.js" type="text/javascript"></script>
+</body>
+</html>
