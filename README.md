@@ -10,7 +10,7 @@
 
 **✅3D姿态编辑器(3D Openpose Editor)：简单好用的3D姿态编辑器节点**
 
-**✅简易图片合成编辑器节点：这才是正在的图片合成编辑节点，修改图片位置后点击确定直接往下执行后续节点无需再次重新执行工作流，算是填补了当前comfyui此类节点的一个空白（至少我还没有发现有其他节点实现此功能）**
+**✅简易图片合成编辑器节点：这才是真正的图片合成编辑节点，修改图片位置后点击确定直接往下执行后续节点无需再次重新执行工作流，算是填补了当前comfyui此类节点的一个空白（至少我还没有发现有其他节点实现此功能）**
 
 **✅PS互通插件：一键实现comfyUI与PS互通交互，支持win和mac系统（PS端插件下载：https://pan.baidu.com/s/1Mh8JO2nvkRvBAt4b9W15Xw?pwd=fkai ）**
 
@@ -61,5 +61,6 @@ https://github.com/juehackr/comfyui_fk_server/assets/85547436/c9eab88b-27f7-4b1a
 - 进入comfyui插件目录 `/ComfyUI/custom_nodes/` 
   - 执行 `git clone https://github.com/juehackr/comfyui_fk_server.git`  
   - 重启 ComfyUI
+
 
 
