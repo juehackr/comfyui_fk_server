@@ -1,0 +1,297 @@
+{
+  "id": "71d6c3b0-bb0a-4028-bae3-eea33378a01b",
+  "revision": 0,
+  "last_node_id": 117,
+  "last_link_id": 236,
+  "nodes": [
+    {
+      "id": 11,
+      "type": "LoadImage",
+      "pos": [
+        -947.2515869140625,
+        -550.5687255859375
+      ],
+      "size": [
+        315,
+        314
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "label": "图像",
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "slot_index": 0,
+          "links": [
+            149,
+            232
+          ]
+        },
+        {
+          "label": "遮罩",
+          "name": "MASK",
+          "type": "MASK",
+          "links": null
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.59",
+        "Node name for S&R": "LoadImage"
+      },
+      "widgets_values": [
+        "杯子.jpg",
+        "image"
+      ]
+    },
+    {
+      "id": 13,
+      "type": "LoadImage",
+      "pos": [
+        -521.0642700195312,
+        -423.58624267578125
+      ],
+      "size": [
+        315,
+        314
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "label": "图像",
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "slot_index": 0,
+          "links": [
+            234
+          ]
+        },
+        {
+          "label": "遮罩",
+          "name": "MASK",
+          "type": "MASK",
+          "slot_index": 1,
+          "links": [
+            235
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.59",
+        "Node name for S&R": "LoadImage"
+      },
+      "widgets_values": [
+        "icon1.png",
+        "image"
+      ]
+    },
+    {
+      "id": 73,
+      "type": "DepthAnythingPreprocessor",
+      "pos": [
+        -580.7117919921875,
+        -828.0757446289062
+      ],
+      "size": [
+        315,
+        82
+      ],
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [
+        {
+          "label": "图像",
+          "name": "image",
+          "type": "IMAGE",
+          "link": 149
+        }
+      ],
+      "outputs": [
+        {
+          "label": "图像",
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "slot_index": 0,
+          "links": [
+            233
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui_controlnet_aux",
+        "ver": "cc6b232f4a47f0cdf70f4e1bfa24b74bd0d75bf1",
+        "Node name for S&R": "DepthAnythingPreprocessor",
+        "aux_id": "Fannovel16/comfyui_controlnet_aux"
+      },
+      "widgets_values": [
+        "depth_anything_vitl14.pth",
+        1024
+      ]
+    },
+    {
+      "id": 114,
+      "type": "PreviewImage",
+      "pos": [
+        199.17999267578125,
+        -561.3256225585938
+      ],
+      "size": [
+        234.8316192626953,
+        282.1263427734375
+      ],
+      "flags": {
+        "collapsed": false
+      },
+      "order": 4,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 236
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.3.59",
+        "Node name for S&R": "PreviewImage"
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 116,
+      "type": "FK_gjttNode2",
+      "pos": [
+        -169.80813598632812,
+        -724.1170654296875
+      ],
+      "size": [
+        300,
+        158
+      ],
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "background",
+          "type": "IMAGE",
+          "link": 232
+        },
+        {
+          "name": "Depth",
+          "type": "IMAGE",
+          "link": 233
+        },
+        {
+          "name": "Texture",
+          "type": "IMAGE",
+          "link": 234
+        },
+        {
+          "name": "TextureMask",
+          "shape": 7,
+          "type": "MASK",
+          "link": 235
+        }
+      ],
+      "outputs": [
+        {
+          "name": "output",
+          "type": "IMAGE",
+          "links": [
+            236
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfyui_fk_server",
+        "ver": "42645d44999589f7cd712f37f1e3ab292984a17e",
+        "Node name for S&R": "FK_gjttNode2"
+      },
+      "widgets_values": [
+        "UI_T7JFoQilmT3qdgZNPt",
+        "{\"backgroundcode\":\"F5a6ed8063d5a0605f9cb.png\",\"depthcode\":\"F9fcc93f56b995fe96689.png\",\"Texturecode\":\"FA1fe6274276f4937fa3670.png\",\"token\":\"FKimghc_7fb17587b371eeaf\"}",
+        null
+      ],
+      "bgcolor": "hsla(0, 0%, 20.8%, 1)"
+    }
+  ],
+  "links": [
+    [
+      149,
+      11,
+      0,
+      73,
+      0,
+      "IMAGE"
+    ],
+    [
+      232,
+      11,
+      0,
+      116,
+      0,
+      "IMAGE"
+    ],
+    [
+      233,
+      73,
+      0,
+      116,
+      1,
+      "IMAGE"
+    ],
+    [
+      234,
+      13,
+      0,
+      116,
+      2,
+      "IMAGE"
+    ],
+    [
+      235,
+      13,
+      1,
+      116,
+      3,
+      "MASK"
+    ],
+    [
+      236,
+      116,
+      0,
+      114,
+      0,
+      "IMAGE"
+    ]
+  ],
+  "groups": [],
+  "config": {},
+  "extra": {
+    "ds": {
+      "scale": 1,
+      "offset": [
+        980.0805048639029,
+        1015.4089083030631
+      ]
+    },
+    "node_versions": {
+      "comfyui_controlnet_aux": "5a049bde9cc117dafc327cded156459289097ea1",
+      "comfy-core": "0.3.10"
+    },
+    "ue_links": [],
+    "frontendVersion": "1.26.11"
+  },
+  "version": 0.4
+}

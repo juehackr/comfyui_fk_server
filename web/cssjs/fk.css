@@ -227,4 +227,21 @@ textarea.fk-textarea-shuru {
     border: 2px solid #303030;
     border-radius: 5px;
     overflow: hidden;
+    box-shadow: 0 2px 10px 0 rgba(0, 0, 0, .15);
+    -webkit-box-shadow: 0 2px 10px 0 rgba(0, 0, 0, .15);
+    -moz-box-shadow: 0 2px 10px 0 rgba(0, 0, 0, .15);
+    -o-box-shadow: 0 2px 10px 0 rgba(0, 0, 0, .15);
+}
+
+.fktietubtnui {
+    background-color: var(--p-inputnumber-button-hover-border-color);
+    border: 2px solid var(--p-togglebutton-background);
+    color: var(--p-togglebutton-checked-color);
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+.fktietubtnui:hover {
+    background-color: var(--p-togglebutton-background);
+    color: var(--p-togglebutton-checked-color);
 }

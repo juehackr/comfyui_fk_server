@@ -1095,3 +1095,5 @@ server/node_modules/.bin/crc32.cmd
 server/node_modules/.bin/crc32
 server/data.json
 ini.json
+/server/node_modules
+finfo.json

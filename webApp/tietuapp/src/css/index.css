@@ -106,11 +106,12 @@ body {
   font-size: 14px;
   padding-bottom: 10px;
 }
-.r{
+
+.r {
   float: right;
 }
 
-#ui_sav {
+.uibtns {
   margin-top: 10px;
   width: 100%;
   padding: 8px 15px;
@@ -136,13 +137,14 @@ body {
   border-color: #67c23a;
 }
 
-#ui_sav:hover {
+.uibtns:hover {
   background-color: #67c23a;
   border-color: #67c23a;
   opacity: .85;
 }
 
-.tips a,#qhc {
+.tips a,
+#qhc {
   cursor: pointer;
   color: var(--wenbse);
 }

@@ -59,7 +59,7 @@ https://github.com/juehackr/comfyui_fk_server/assets/85547436/c9eab88b-27f7-4b1a
 ## 插件安装方法
 
 - 进入comfyui插件目录 `/ComfyUI/custom_nodes/` 
-  - 执行 `git clone https://github.com/juehackr/comfyui_fk_server.git`  
+  - 执行 `git clone https://github.com/juehackr/comfyui_fk_server.git`
   - 重启 ComfyUI
 
 
