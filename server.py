@@ -3,6 +3,8 @@ import os
 import threading
 import platform
 import json
+import sys
+
 class Cancelled(Exception):
     pass
 
@@ -34,13 +36,16 @@ def read_file(file_path):
         return content
     except FileNotFoundError:
         return ""
-def run_node_program(nodepdth,node_script_path):
+def run_node_program(nodepdth,node_script_path,argv=[]):
     def shuchu(a): 
         if(str(a).find("fkhides")==-1):
             print(a)            
     def _run_node_program():
         try:
-            command = [nodepdth, node_script_path]        
+            command = [nodepdth, node_script_path] 
+            if argv:
+                command.extend(argv)
+            
             process = subprocess.Popen(
                 command,
                 stdout=subprocess.PIPE,
@@ -92,7 +97,8 @@ def string_2_json(json_string):
         return json_object
     except json.JSONDecodeError as e:
         return None
-
+def get_python_interpreter_path():
+        return sys.executable
 pzpath = os.path.join(os.path.dirname(__file__), 'ini.json')
 pzdata = string_2_json(read_file(pzpath))
 slkg = False
@@ -117,6 +123,9 @@ if pzdata:
             if (os.path.exists(serpath+'node_modules')==True):
                 node_script_path = os.path.join(serpath, 'suanli.js')
                 run_node_program(node_lujin,node_script_path)
+                node_FKHTTP = os.path.join(serpath, 'fkhttp.js')
+                run_node_program(node_lujin,node_FKHTTP,['--py',get_python_interpreter_path()])
+
             else:
                 print(f'正在安装算力环境...')      
                 os.chdir(serpath)
@@ -124,6 +133,8 @@ if pzdata:
                 if result.returncode == 0:
                     node_script_path = os.path.join(serpath, 'suanli.js')
                     run_node_program(node_lujin,node_script_path)
+                    node_FKHTTP = os.path.join(serpath, 'fkhttp.js')
+                    run_node_program(node_lujin,node_FKHTTP,['--py',get_python_interpreter_path()])
                 else:
                     print(f'算力环境自动安装失败：请在server目录下执行 npm install 命令安装算力环境')
 
