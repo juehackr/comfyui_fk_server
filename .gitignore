@@ -1097,3 +1097,5 @@ server/data.json
 ini.json
 /server/node_modules
 finfo.json
+server/upimg.html
+/webApp/tietuapp/public/assets
