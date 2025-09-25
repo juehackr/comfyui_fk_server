@@ -61,8 +61,9 @@ https://github.com/juehackr/comfyui_fk_server/assets/85547436/c9eab88b-27f7-4b1a
 - 进入comfyui插件目录 `/ComfyUI/custom_nodes/` 
   - 执行 `git clone https://github.com/juehackr/comfyui_fk_server.git`
   - 依赖安装步骤：进入comfyui的python环境目录（一般是*:comfyui目录\python_embeded\）执行如下命令
-  - python.exe -m pip install -r custom_nodes/ComfyUI-OOTDiffusion/requirements.txt
+  - python.exe -m pip install -r {comfyui路径}/custom_nodes/comfyui_fk_server/requirements.txt
   - 重启 ComfyUI
+
 
 
 
