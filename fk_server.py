@@ -202,6 +202,9 @@ async def fksapi(request):
          elif gtype == "getslpz":
                 config_path = os.path.join(os.path.dirname(__file__), "server/data.json")
                 return web.json_response(string_to_json(read_file_content(config_path)), content_type='application/json')
+         elif gtype == "getuppz":
+                config_path = os.path.join(os.path.dirname(__file__), "server/sr.json")
+                return web.json_response(string_to_json(read_file_content(config_path)), content_type='application/json')       
          elif gtype == "getdir":                
                 if tget['dir'] =="input":
                     config_path = folder_paths.get_input_directory()
