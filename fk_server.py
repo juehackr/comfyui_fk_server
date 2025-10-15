@@ -273,5 +273,12 @@ async def fkpostapi(request):
                 return web.json_response({}, content_type='application/json')
         return web.json_response({}, content_type='application/json')
 
-
+def setupapipz():
+    config_path = os.path.join(os.path.dirname(__file__), "server/sr.json")
+    config_data = string_to_json(read_file_content(config_path))
+    get_output = folder_paths.get_output_directory()
+    config_data["dir"] = get_output
+    with open(config_path, 'w', encoding='utf-8') as file:
+        json.dump(config_data, file, ensure_ascii=False, indent=4)
+setupapipz()
 print(f"\33[93m》===>====>========>Fk_Server:OK！<========<====<===《\33[0m")
