@@ -1,2 +1,2 @@
 PyCryptodome
-aiohttp
+pybase64
