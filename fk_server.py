@@ -166,8 +166,6 @@ async def getmdoimg(request):
          mxpic2 = os.path.splitext(mx)[0] + ".png"
          mxpic3 = os.path.splitext(mx)[0] + ".jpg"
          mxpic4 = os.path.splitext(mx)[0] + ".preview.jpg"
-
-
          for index, folder in enumerate(folders[0]):
            fm1 = os.path.join(folder, mxpic)
            fm2 = os.path.join(folder, mxpic2)
@@ -276,8 +274,8 @@ async def fkpostapi(request):
 def setupapipz():
     config_path = os.path.join(os.path.dirname(__file__), "server/sr.json")
     config_data = string_to_json(read_file_content(config_path))
-    get_output = folder_paths.get_output_directory()
-    config_data["dir"] = get_output
+    get_input = folder_paths.get_input_directory()
+    config_data["dir"] = get_input
     with open(config_path, 'w', encoding='utf-8') as file:
         json.dump(config_data, file, ensure_ascii=False, indent=4)
 setupapipz()
