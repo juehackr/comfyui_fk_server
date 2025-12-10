@@ -86,9 +86,12 @@ def resize_and_save_image(img_path, width):
         return None
 
 def find_image_files(directory, qianzhui):
-    image_extensions = {'.png', '.jpg', '.jpeg', '.gif', '.webp', '.bmp'}
-    
+    image_extensions = {'.png', '.jpg', '.jpeg', '.gif', '.webp', '.bmp'}    
     dir_structure = {}
+    
+    if not os.path.exists(directory):
+        return json.dumps({"code":"目录不存在","path":directory}, indent=4)
+
     for root, dirs, files in os.walk(directory):
         dirs[:] = sorted(
             [d for d in dirs if d != 'fenmian'],
@@ -224,8 +227,9 @@ async def fksapi(request):
                  alrrjs = {}
                  for dir in dira:
                     alrrjs[dir] =string_to_json(find_image_files(os.path.join(config_path, dir),os.path.join(config_path, dir)))
-                 return web.json_response(alrrjs, content_type='application/json')    
-               
+                 return web.json_response(alrrjs, content_type='application/json')   
+               else:
+                 return web.json_response({"v":gtype}, content_type='application/json')
          elif gtype == "delslpz":
                config_path = os.path.join(os.path.dirname(__file__), "server/data.json")
                try:
