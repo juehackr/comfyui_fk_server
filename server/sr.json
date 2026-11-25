@@ -1,5 +1,12 @@
 {
     "PORT": 3059,
     "dir": "G:\\ComfyUI_FKMX_2025\\ComfyUI\\input",
-    "dk": 8188
+    "dk": 8188,
+    "qiniu": {
+        "appid": "",
+        "appkey": "",
+        "name": "",
+        "url": "",
+        "hz": ""
+    }
 }

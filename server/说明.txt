@@ -1,0 +1,1 @@
+如果nodejs程序不是全局安装无法直接用node调用，请在node.txt文件中填写node程序路径

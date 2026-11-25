@@ -85,10 +85,15 @@ def resize_and_save_image(img_path, width):
     except Exception as e:
         return None
 
-def find_image_files(directory, qianzhui):
-    image_extensions = {'.png', '.jpg', '.jpeg', '.gif', '.webp', '.bmp'}    
-    dir_structure = {}
-    
+def find_image_files(directory, qianzhui,type='image'):
+    if type == 'video':
+        image_extensions = {'.mp4', '.avi', '.mov', '.mkv', '.flv', '.wmv', '.webm', '.m4v', '.ogv'}    
+    elif type == 'audio':
+        image_extensions = {'.mp3', '.wav', '.aac', '.flac', '.ogg', '.m4a', '.aac'}    
+    else:
+        image_extensions = {'.png', '.jpg', '.jpeg', '.gif', '.webp', '.bmp'}
+
+    dir_structure = {}    
     if not os.path.exists(directory):
         return json.dumps({"code":"目录不存在","path":directory}, indent=4)
 
@@ -100,13 +105,13 @@ def find_image_files(directory, qianzhui):
         files = sorted(
             files,
             key=lambda x: os.path.splitext(x)[0].lower()
-        )
+        )      
         
         relative_path = os.path.relpath(root, directory)
         current_files = []
         if relative_path != '.':
             current_files = [
-                {"u": "", "name": f}
+                {"u": "","type":type, "name": f}
                 for f in files
                 if os.path.splitext(f)[1].lower() in image_extensions
             ]
@@ -126,8 +131,7 @@ def find_image_files(directory, qianzhui):
         
         for subdir in dir_structure[path]["subdirs"]:
             sub_path = os.path.join(path, subdir) if path != '.' else subdir
-            node["zidir"].append(build_nested(sub_path))
-        
+            node["zidir"].append(build_nested(sub_path))        
         return node
     
     return json.dumps(build_nested('.'), indent=4)
@@ -216,17 +220,32 @@ async def fksapi(request):
                 else:
                     config_path = os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(__file__))) , tget['dir'])   
                 return web.json_response({"dir":config_path}, content_type='application/json')
-         elif gtype == "getmoban":             
+         elif gtype == "getmoban":  #http://127.0.0.1:8188/fk_server?type=getmoban&getype=image&dir=G:\ComfyUI_FKMX_2025\ComfyUI\custom_nodes\comfyui_fk_server\moban\%E5%85%B6%E5%AE%83           
                config_path = os.path.join(base_path, "moban")
                json_output = '{}'
+               #获取文件类型 没有该参数默认返回image  #image,video,audio
+               gettype = tget.get('getype','image')
+               if gettype not in ['image','video','audio']:
+                   gettype = 'image'
+
                if 'dir' in tget:
-                 json_output = find_image_files(os.path.join(config_path, tget['dir']),os.path.join(config_path, tget['dir']))
+                #判断tget['dir']是否已经是绝对路径
+                 if os.path.isabs(tget['dir']):
+                    thisdir = tget['dir']
+                 else:
+                    thisdir = os.path.join(config_path, tget['dir'])
+                 json_output = find_image_files(thisdir,thisdir,gettype)
                  return web.json_response(string_to_json(json_output), content_type='application/json')
                elif 'dira' in tget:
                  dira = tget['dira'].split("|")
                  alrrjs = {}
                  for dir in dira:
-                    alrrjs[dir] =string_to_json(find_image_files(os.path.join(config_path, dir),os.path.join(config_path, dir)))
+                    #判断dir是否已经是绝对路径
+                    if os.path.isabs(dir):
+                        thisdir = dir
+                    else:
+                        thisdir = os.path.join(config_path, dir)
+                    alrrjs[dir] = string_to_json(find_image_files(thisdir,thisdir,gettype))
                  return web.json_response(alrrjs, content_type='application/json')   
                else:
                  return web.json_response({"v":gtype}, content_type='application/json')
